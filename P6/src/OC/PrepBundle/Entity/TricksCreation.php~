@@ -1,0 +1,161 @@
+<?php
+
+namespace OC\PrepBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * TricksCreation
+ *
+ * @ORM\Table(name="tricks_creation")
+ * @ORM\Entity(repositoryClass="OC\PrepBundle\Repository\TricksCreationRepository")
+ */
+class TricksCreation
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="date", type="datetime")
+     */
+    private $date;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=255, unique=true)
+     */
+    private $name;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="picture", type="blob")
+     */
+    private $picture;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="video_url", type="string", length=2083, nullable=true)
+     */
+    private $videoUrl;
+
+    public function __construct()
+    {
+        $this->date = new \DateTime('now');
+    }
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     *
+     * @return TricksCreation
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Set picture
+     *
+     * @param string $picture
+     *
+     * @return TricksCreation
+     */
+    public function setPicture($picture)
+    {
+        $this->picture = $picture;
+
+        return $this;
+    }
+
+    /**
+     * Get picture
+     *
+     * @return string
+     */
+    public function getPicture()
+    {
+        return $this->picture;
+    }
+
+    /**
+     * Set videoUrl
+     *
+     * @param string $videoUrl
+     *
+     * @return TricksCreation
+     */
+    public function setVideoUrl($videoUrl)
+    {
+        $this->videoUrl = $videoUrl;
+
+        return $this;
+    }
+
+    /**
+     * Get videoUrl
+     *
+     * @return string
+     */
+    public function getVideoUrl()
+    {
+        return $this->videoUrl;
+    }
+    /**
+     * Set date
+     *
+     * @param \DateTime $date
+     *
+     * @return TricksCreation
+     */
+    public function setDate($date)
+    {
+        $this->date = $date;
+
+        return $this;
+    }
+
+    /**
+     * Get date
+     *
+     * @return \DateTime
+     */
+    public function getDate()
+    {
+        return $this->date;
+    }
+}

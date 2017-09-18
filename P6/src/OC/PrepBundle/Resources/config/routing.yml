@@ -1,0 +1,6 @@
+oc_prep_homepage:
+    path:     /
+    defaults: { _controller: OCPrepBundle:Prep:index }
+oc_prep_add:
+    path:    /add
+    defaults: { _controller: OCPrepBundle:Prep:add }
