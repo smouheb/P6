@@ -10,4 +10,11 @@ namespace OC\PrepBundle\Repository;
  */
 class TricksGroupRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function listOfAll()
+    {
+        return $this->createQueryBuilder('g')
+                    ->getQuery()
+                    ->getResult();
+
+    }
 }

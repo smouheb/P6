@@ -29,13 +29,6 @@ class Video
     private $url;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="name", type="string", length=255)
-     */
-    private $name;
-
-    /**
      * @var \DateTime
      *
      * @ORM\Column(name="created_at", type="datetime")
@@ -50,18 +43,14 @@ class Video
     private $updatedAt;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="created_by", type="string", length=255)
+     * @ORM\ManyToOne(targetEntity="OC\PrepBundle\Entity\Trick", inversedBy="video")
      */
-    private $created_by;
+    private $trick;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="updated_by", type="string", length=255)
-     */
-    private $updated_by;
+    public function __construct()
+    {
+        $this->createdAt = new \DateTime('now');
+    }
 
     /**
      * Get id
@@ -98,27 +87,122 @@ class Video
     }
 
     /**
-     * Set name
+     * Set createdAt
      *
-     * @param string $name
+     * @param \DateTime $createdAt
      *
      * @return Video
      */
-    public function setName($name)
+    public function setCreatedAt($createdAt)
     {
-        $this->name = $name;
+        $this->createdAt = $createdAt;
 
         return $this;
     }
 
     /**
-     * Get name
+     * Get createdAt
+     *
+     * @return \DateTime
+     */
+    public function getCreatedAt()
+    {
+        return $this->createdAt;
+    }
+
+    /**
+     * Set updatedAt
+     *
+     * @param \DateTime $updatedAt
+     *
+     * @return Video
+     */
+    public function setUpdatedAt($updatedAt)
+    {
+        $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
+    /**
+     * Get updatedAt
+     *
+     * @return \DateTime
+     */
+    public function getUpdatedAt()
+    {
+        return $this->updatedAt;
+    }
+
+    /**
+     * Set createdBy
+     *
+     * @param string $createdBy
+     *
+     * @return Video
+     */
+    public function setCreatedBy($createdBy)
+    {
+        $this->created_by = $createdBy;
+
+        return $this;
+    }
+
+    /**
+     * Get createdBy
      *
      * @return string
      */
-    public function getName()
+    public function getCreatedBy()
     {
-        return $this->name;
+        return $this->created_by;
+    }
+
+    /**
+     * Set updatedBy
+     *
+     * @param string $updatedBy
+     *
+     * @return Video
+     */
+    public function setUpdatedBy($updatedBy)
+    {
+        $this->updated_by = $updatedBy;
+
+        return $this;
+    }
+
+    /**
+     * Get updatedBy
+     *
+     * @return string
+     */
+    public function getUpdatedBy()
+    {
+        return $this->updated_by;
+    }
+
+    /**
+     * Set trick
+     *
+     * @param \OC\PrepBundle\Entity\Trick $trick
+     *
+     * @return Video
+     */
+    public function setTrick(\OC\PrepBundle\Entity\Trick $trick = null)
+    {
+        $this->trick = $trick;
+
+        return $this;
+    }
+
+    /**
+     * Get trick
+     *
+     * @return \OC\PrepBundle\Entity\Trick
+     */
+    public function getTrick()
+    {
+        return $this->trick;
     }
 }
-

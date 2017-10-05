@@ -29,13 +29,6 @@ class Picture
     private $url;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="name", type="string", length=255)
-     */
-    private $name;
-
-    /**
      * @var \DateTime
      *
      * @ORM\Column(name="created_at", type="datetime")
@@ -50,19 +43,14 @@ class Picture
     private $updatedAt;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="created_by", type="string", length=255)
+     * @ORM\ManyToOne(targetEntity="OC\PrepBundle\Entity\Trick", inversedBy="picture")
      */
-    private $created_by;
+    private $trick;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="updated_by", type="string", length=255)
-     */
-    private $updated_by;
-
+    public function __construct()
+    {
+        $this->createdAt = new \DateTime('now');
+    }
 
     /**
      * Get id
@@ -96,30 +84,6 @@ class Picture
     public function getUrl()
     {
         return $this->url;
-    }
-
-    /**
-     * Set name
-     *
-     * @param string $name
-     *
-     * @return Picture
-     */
-    public function setName($name)
-    {
-        $this->name = $name;
-
-        return $this;
-    }
-
-    /**
-     * Get name
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->name;
     }
 
     /**
@@ -171,50 +135,28 @@ class Picture
     }
 
     /**
-     * Set createdBy
+     * Set trick
      *
-     * @param string $createdBy
+     * @param \OC\PrepBundle\Entity\Trick $trick
      *
      * @return Picture
      */
-    public function setCreatedBy($createdBy)
+    public function setTrick(\OC\PrepBundle\Entity\Trick $trick = null)
     {
-        $this->created_by = $createdBy;
+        $this->trick = $trick;
 
         return $this;
     }
 
     /**
-     * Get createdBy
+     * Get trick
      *
-     * @return string
+     * @return \OC\PrepBundle\Entity\Trick
      */
-    public function getCreatedBy()
+    public function getTrick()
     {
-        return $this->created_by;
+        return $this->trick;
     }
 
-    /**
-     * Set updatedBy
-     *
-     * @param string $updatedBy
-     *
-     * @return Picture
-     */
-    public function setUpdatedBy($updatedBy)
-    {
-        $this->updated_by = $updatedBy;
 
-        return $this;
-    }
-
-    /**
-     * Get updatedBy
-     *
-     * @return string
-     */
-    public function getUpdatedBy()
-    {
-        return $this->updated_by;
-    }
 }

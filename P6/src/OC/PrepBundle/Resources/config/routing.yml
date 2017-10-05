@@ -2,5 +2,8 @@ oc_prep_homepage:
     path:     /
     defaults: { _controller: OCPrepBundle:Prep:index }
 oc_prep_add:
-    path:    /add
+    path:    /add-trick
     defaults: { _controller: OCPrepBundle:Prep:add }
+oc_prep_action:
+    path:    /show/{id}
+    defaults: { _controller: OCPrepBundle:Prep:show}

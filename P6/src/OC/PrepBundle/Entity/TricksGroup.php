@@ -2,6 +2,7 @@
 
 namespace OC\PrepBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -19,7 +20,7 @@ class TricksGroup
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    private $groupId;
 
     /**
      * @var string
@@ -45,26 +46,25 @@ class TricksGroup
     /**
      * @var string
      *
-     * @ORM\Column(name="created_by", type="string", length=255)
+     * @ORM\Column(name="created_by", type="string", length=255, nullable=true)
      */
     private $created_by;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="updated_by", type="string", length=255)
+     * @ORM\Column(name="updated_by", type="string", length=255, nullable=true)
      */
     private $updated_by;
-
 
     /**
      * Get id
      *
      * @return int
      */
-    public function getId()
+    public function getGroupId()
     {
-        return $this->id;
+        return $this->groupId;
     }
     /**
      * Set groupName
@@ -186,4 +186,5 @@ class TricksGroup
     {
         return $this->updated_by;
     }
+
 }

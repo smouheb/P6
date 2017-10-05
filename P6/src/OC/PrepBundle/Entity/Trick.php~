@@ -3,12 +3,14 @@
 namespace OC\PrepBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
+
 
 /**
  * Trick
  *
  * @ORM\Table(name="tricks_creation")
- * @ORM\Entity(repositoryClass="OC\PrepBundle\Repository\TricksCreationRepository")
+ * @ORM\Entity(repositoryClass="OC\PrepBundle\Repository\TrickRepository")
  */
 class Trick
 {
@@ -38,15 +40,14 @@ class Trick
     /**
      * @var string
      *
-     * @ORM\Column(name="created_by", type="string", length=255)
+     * @ORM\Column(name="created_by", type="string", length=255, nullable=true)
      */
     private $created_by;
-
 
     /**
      * @var string
      *
-     * @ORM\Column(name="updated_by", type="string", length=255)
+     * @ORM\Column(name="updated_by", type="string", length=255, nullable=true)
      */
     private $updated_by;
 
@@ -58,26 +59,33 @@ class Trick
     private $name;
 
     /**
-     * @ORM\ManyToOne(targetEntity="OC\PrepBundle\Entity\Picture")
-     * @ORM\JoinColumn(nullable=false)
+     * @var ArrayCollection $picture
+     * @ORM\OneToMany(targetEntity="OC\PrepBundle\Entity\Picture", mappedBy="trick", cascade={"persist"})
      */
     private $picture;
 
     /**
-     * @ORM\ManyToOne(targetEntity="OC\PrepBundle\Entity\Video")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\OneToMany(targetEntity="OC\PrepBundle\Entity\Video", mappedBy="trick", cascade={"persist"})
      */
     private $video;
 
     /**
-     * @ORM\ManyToOne(targetEntity="OC\PrepBundle\Entity\TricksGroup")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\ManyToOne(targetEntity="OC\PrepBundle\Entity\TricksGroup", inversedBy="trick")
      */
     private $group;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="description", type="string", length=255, nullable=true)
+     */
+    private $description;
 
     public function __construct()
     {
         $this->createdAt = new \DateTime('now');
+        $this->picture = new ArrayCollection();
+        $this->video = new ArrayCollection();
     }
 
     /**
@@ -115,78 +123,6 @@ class Trick
     }
 
     /**
-     * Set picture
-     *
-     * @param \OC\PrepBundle\Entity\Picture $picture
-     *
-     * @return Trick
-     */
-    public function setPicture(\OC\PrepBundle\Entity\Picture $picture)
-    {
-        $this->picture = $picture;
-
-        return $this;
-    }
-
-    /**
-     * Get picture
-     *
-     * @return \OC\PrepBundle\Entity\Picture
-     */
-    public function getPicture()
-    {
-        return $this->picture;
-    }
-
-    /**
-     * Set video
-     *
-     * @param \OC\PrepBundle\Entity\Video $video
-     *
-     * @return Trick
-     */
-    public function setVideo(\OC\PrepBundle\Entity\Video $video)
-    {
-        $this->video = $video;
-
-        return $this;
-    }
-
-    /**
-     * Get video
-     *
-     * @return \OC\PrepBundle\Entity\Video
-     */
-    public function getVideo()
-    {
-        return $this->video;
-    }
-
-    /**
-     * Set group
-     *
-     * @param \OC\PrepBundle\Entity\TricksGroup $group
-     *
-     * @return Trick
-     */
-    public function setGroup(\OC\PrepBundle\Entity\TricksGroup $group)
-    {
-        $this->group = $group;
-
-        return $this;
-    }
-
-    /**
-     * Get group
-     *
-     * @return \OC\PrepBundle\Entity\TricksGroup
-     */
-    public function getGroup()
-    {
-        return $this->group;
-    }
-
-    /**
      * Set createdAt
      *
      * @param \DateTime $createdAt
@@ -208,5 +144,197 @@ class Trick
     public function getCreatedAt()
     {
         return $this->createdAt;
+    }
+
+    /**
+     * Set updatedAt
+     *
+     * @param \DateTime $updatedAt
+     *
+     * @return Trick
+     */
+    public function setUpdatedAt($updatedAt)
+    {
+        $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
+    /**
+     * Get updatedAt
+     *
+     * @return \DateTime
+     */
+    public function getUpdatedAt()
+    {
+        return $this->updatedAt;
+    }
+
+    /**
+     * Set createdBy
+     *
+     * @param string $createdBy
+     *
+     * @return Trick
+     */
+    public function setCreatedBy($createdBy)
+    {
+        $this->created_by = $createdBy;
+
+        return $this;
+    }
+
+    /**
+     * Get createdBy
+     *
+     * @return string
+     */
+    public function getCreatedBy()
+    {
+        return $this->created_by;
+    }
+
+    /**
+     * Set updatedBy
+     *
+     * @param string $updatedBy
+     *
+     * @return Trick
+     */
+    public function setUpdatedBy($updatedBy)
+    {
+        $this->updated_by = $updatedBy;
+
+        return $this;
+    }
+
+    /**
+     * Get updatedBy
+     *
+     * @return string
+     */
+    public function getUpdatedBy()
+    {
+        return $this->updated_by;
+    }
+
+    /**
+     * Add picture
+     *
+     * @param \OC\PrepBundle\Entity\Picture $picture
+     *
+     * @return Trick
+     */
+    public function addPicture(\OC\PrepBundle\Entity\Picture $picture)
+    {
+        $this->picture[] = $picture;
+
+        $picture->setTrick($this);
+
+        return $this;
+    }
+
+    /**
+     * Remove picture
+     *
+     * @param \OC\PrepBundle\Entity\Picture $picture
+     */
+    public function removePicture(\OC\PrepBundle\Entity\Picture $picture)
+    {
+        $this->picture->removeElement($picture);
+    }
+
+    /**
+     * Get picture
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getPicture()
+    {
+        return $this->picture;
+    }
+
+    /**
+     * Add video
+     *
+     * @param \OC\PrepBundle\Entity\Video $video
+     *
+     * @return Trick
+     */
+    public function addVideo(\OC\PrepBundle\Entity\Video $video)
+    {
+        $this->video[] = $video;
+
+        $video->setTrick($this);
+
+        return $this;
+    }
+
+    /**
+     * Remove video
+     *
+     * @param \OC\PrepBundle\Entity\Video $video
+     */
+    public function removeVideo(\OC\PrepBundle\Entity\Video $video)
+    {
+        $this->video->removeElement($video);
+    }
+
+    /**
+     * Get video
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getVideo()
+    {
+        return $this->video;
+    }
+
+    /**
+     * Set group
+     *
+     * @param \OC\PrepBundle\Entity\TricksGroup $group
+     *
+     * @return Trick
+     */
+    public function setGroup(\OC\PrepBundle\Entity\TricksGroup $group = null)
+    {
+        $this->group = $group;
+
+        return $this;
+    }
+
+    /**
+     * Get group
+     *
+     * @return \OC\PrepBundle\Entity\TricksGroup
+     */
+    public function getGroup()
+    {
+        return $this->group;
+    }
+
+    /**
+     * Set description
+     *
+     * @param string $description
+     *
+     * @return Trick
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * Get description
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
     }
 }

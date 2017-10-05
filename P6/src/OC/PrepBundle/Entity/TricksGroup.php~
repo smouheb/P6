@@ -2,6 +2,7 @@
 
 namespace OC\PrepBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -19,7 +20,7 @@ class TricksGroup
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    private $groupId;
 
     /**
      * @var string
@@ -45,26 +46,31 @@ class TricksGroup
     /**
      * @var string
      *
-     * @ORM\Column(name="created_by", type="string", length=255)
+     * @ORM\Column(name="created_by", type="string", length=255, nullable=true)
      */
     private $created_by;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="updated_by", type="string", length=255)
+     * @ORM\Column(name="updated_by", type="string", length=255, nullable=true)
      */
     private $updated_by;
 
+
+    public function __construct()
+    {
+        $this->trick = new ArrayCollection();
+    }
 
     /**
      * Get id
      *
      * @return int
      */
-    public function getId()
+    public function getGroupId()
     {
-        return $this->id;
+        return $this->groupId;
     }
     /**
      * Set groupName
@@ -90,5 +96,134 @@ class TricksGroup
         return $this->groupName;
     }
 
-}
 
+    /**
+     * Set createdAt
+     *
+     * @param \DateTime $createdAt
+     *
+     * @return TricksGroup
+     */
+    public function setCreatedAt($createdAt)
+    {
+        $this->createdAt = $createdAt;
+
+        return $this;
+    }
+
+    /**
+     * Get createdAt
+     *
+     * @return \DateTime
+     */
+    public function getCreatedAt()
+    {
+        return $this->createdAt;
+    }
+
+    /**
+     * Set updatedAt
+     *
+     * @param \DateTime $updatedAt
+     *
+     * @return TricksGroup
+     */
+    public function setUpdatedAt($updatedAt)
+    {
+        $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
+    /**
+     * Get updatedAt
+     *
+     * @return \DateTime
+     */
+    public function getUpdatedAt()
+    {
+        return $this->updatedAt;
+    }
+
+    /**
+     * Set createdBy
+     *
+     * @param string $createdBy
+     *
+     * @return TricksGroup
+     */
+    public function setCreatedBy($createdBy)
+    {
+        $this->created_by = $createdBy;
+
+        return $this;
+    }
+
+    /**
+     * Get createdBy
+     *
+     * @return string
+     */
+    public function getCreatedBy()
+    {
+        return $this->created_by;
+    }
+
+    /**
+     * Set updatedBy
+     *
+     * @param string $updatedBy
+     *
+     * @return TricksGroup
+     */
+    public function setUpdatedBy($updatedBy)
+    {
+        $this->updated_by = $updatedBy;
+
+        return $this;
+    }
+
+    /**
+     * Get updatedBy
+     *
+     * @return string
+     */
+    public function getUpdatedBy()
+    {
+        return $this->updated_by;
+    }
+
+    /**
+     * Add trick
+     *
+     * @param \OC\PrepBundle\Entity\Trick $trick
+     *
+     * @return TricksGroup
+     */
+    public function addTrick(\OC\PrepBundle\Entity\Trick $trick)
+    {
+        $this->trick[] = $trick;
+
+        return $this;
+    }
+
+    /**
+     * Remove trick
+     *
+     * @param \OC\PrepBundle\Entity\Trick $trick
+     */
+    public function removeTrick(\OC\PrepBundle\Entity\Trick $trick)
+    {
+        $this->trick->removeElement($trick);
+    }
+
+    /**
+     * Get trick
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getTrick()
+    {
+        return $this->trick;
+    }
+}

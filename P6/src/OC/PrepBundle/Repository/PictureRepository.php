@@ -10,4 +10,24 @@ namespace OC\PrepBundle\Repository;
  */
 class PictureRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function findIdToJoin()
+    {
+        $em = $this->getEntityManager();
+        $qb= $em->createQueryBuilder();
+
+        $qb->select(array('p','t'))
+            ->from('OCPrepBundle:Picture', 'p')
+            ->join('p.trick','t');
+
+         $result=$qb->getQuery()->getResult();
+
+        try{
+
+            return $result;
+
+        }catch (\Doctrine\ORM\NoResultException $e){
+
+            return null;
+        }
+    }
 }
