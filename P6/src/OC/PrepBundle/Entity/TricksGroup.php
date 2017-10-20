@@ -58,7 +58,7 @@ class TricksGroup
     private $updated_by;
 
     /**
-     * @ORM\OneToMany(targetEntity="OC\PrepBundle\Entity\Trick", mappedBy="group")
+     * @ORM\OneToMany(targetEntity="OC\PrepBundle\Entity\Trick", mappedBy="group", cascade={"remove"})
      */
     private $tricks;
 

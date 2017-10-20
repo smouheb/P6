@@ -48,6 +48,11 @@ body {
   font-size: 85%;
 }
 
+.card-block {
+  padding: 0;
+}
+
+
 footer {
   padding-top: 3rem;
   padding-bottom: 3rem;
