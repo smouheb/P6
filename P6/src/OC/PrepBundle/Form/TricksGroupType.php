@@ -30,9 +30,7 @@ class TricksGroupType extends AbstractType
                 return $test;
             },
             'required' => true,
-
         ]);
-
     }
     /**
      *

@@ -3,6 +3,7 @@
 namespace OC\PrepBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints\DateTime;
 
 /**
  * Comment
@@ -35,14 +36,6 @@ class Comment
      */
     private $createdAt;
 
-
-    /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="updated_at", type="datetime", nullable=true)
-     */
-    private $updatedAt;
-
     /**
      * @var string
      *
@@ -51,17 +44,19 @@ class Comment
     private $created_by;
 
     /**
-     * @var string
+     * @var int
      *
-     * @ORM\Column(name="updated_by", type="string", length=255)
-     */
-    private $updated_by;
-
-    /**
-     * @ORM\ManyToOne(targetEntity="OC\PrepBundle\Entity\Trick")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\Column(name="trick_id", type="integer")
      */
     private $trick;
+
+    /**
+     * Comment constructor.
+     */
+    public function __construct()
+    {
+        $this->createdAt = new \DateTime('now');
+    }
 
     /**
      * Get id
@@ -128,7 +123,7 @@ class Comment
      *
      * @return Comment
      */
-    public function setTrick(\OC\PrepBundle\Entity\Trick $trick)
+    public function setTrick($trick)
     {
         $this->trick = $trick;
 
@@ -138,35 +133,11 @@ class Comment
     /**
      * Get trick
      *
-     * @return \OC\PrepBundle\Entity\Trick
+     * @return int
      */
     public function getTrick()
     {
         return $this->trick;
-    }
-
-    /**
-     * Set updatedAt
-     *
-     * @param \DateTime $updatedAt
-     *
-     * @return Comment
-     */
-    public function setUpdatedAt($updatedAt)
-    {
-        $this->updatedAt = $updatedAt;
-
-        return $this;
-    }
-
-    /**
-     * Get updatedAt
-     *
-     * @return \DateTime
-     */
-    public function getUpdatedAt()
-    {
-        return $this->updatedAt;
     }
 
     /**
@@ -193,27 +164,4 @@ class Comment
         return $this->created_by;
     }
 
-    /**
-     * Set updatedBy
-     *
-     * @param string $updatedBy
-     *
-     * @return Comment
-     */
-    public function setUpdatedBy($updatedBy)
-    {
-        $this->updated_by = $updatedBy;
-
-        return $this;
-    }
-
-    /**
-     * Get updatedBy
-     *
-     * @return string
-     */
-    public function getUpdatedBy()
-    {
-        return $this->updated_by;
-    }
 }

@@ -2,10 +2,7 @@
 
 namespace OC\PrepBundle\Controller;
 
-use OC\PrepBundle\Entity\Test;
-use OC\PrepBundle\Form\TestType;
 use OC\PrepBundle\Entity\Picture;
-use OC\PrepBundle\Entity\TricksGroup;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use OC\PrepBundle\Entity\Trick;
@@ -26,18 +23,17 @@ class PrepController extends Controller
     public function addAction(Request $request)
     {
         $trick = new Trick();
-        $group = new TricksGroup();
 
         $form = $this->createForm( TrickType::class, $trick);
         $form->handleRequest($request);
 
         if($form->isSubmitted() && $form->isValid()){
 
-            $trick->setGroup();
-
             $em = $this->getDoctrine()->getManager();
             $em->persist($trick);
             $em->flush();
+
+            $this->addFlash('success', 'message sent Thank you!');
 
             return $this->redirectToRoute('oc_prep_homepage');
         }
@@ -47,16 +43,5 @@ class PrepController extends Controller
         ));
     }
 
-    public function showAction($id)
-    {
-        $trick = $this->getDoctrine()
-            ->getManager()
-            ->getRepository(Trick::class)
-            ->findIdToJoin($id);
-
-        return $this->render('OCPrepBundle:Default:show.html.twig', array(
-            'trick'=>$trick
-        ));
-    }
 
 }

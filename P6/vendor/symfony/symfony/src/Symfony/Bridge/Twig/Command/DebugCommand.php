@@ -53,7 +53,7 @@ class DebugCommand extends Command
     {
         $this
             ->setDefinition(array(
-                new InputArgument('filter', InputArgument::OPTIONAL, 'Show details for all entries matching this filter'),
+                new InputArgument('filter', InputArgument::OPTIONAL, 'ShowController details for all entries matching this filter'),
                 new InputOption('format', null, InputOption::VALUE_REQUIRED, 'The output format (text or json)', 'text'),
             ))
             ->setDescription('Shows a list of twig functions, filters, globals and tests')

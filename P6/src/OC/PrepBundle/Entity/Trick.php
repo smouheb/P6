@@ -60,17 +60,18 @@ class Trick
 
     /**
      * @var ArrayCollection $picture
-     * @ORM\OneToMany(targetEntity="OC\PrepBundle\Entity\Picture", mappedBy="trick", cascade={"persist"})
+     * @ORM\OneToMany(targetEntity="OC\PrepBundle\Entity\Picture", mappedBy="trick", cascade={"persist","remove"})
      */
     private $picture;
 
     /**
-     * @ORM\OneToMany(targetEntity="OC\PrepBundle\Entity\Video", mappedBy="trick", cascade={"persist"})
+     * @ORM\OneToMany(targetEntity="OC\PrepBundle\Entity\Video", mappedBy="trick", cascade={"persist", "remove"})
      */
     private $video;
 
     /**
-     * @ORM\ManyToOne(targetEntity="OC\PrepBundle\Entity\TricksGroup",cascade={"persist"})
+     * @ORM\ManyToOne(targetEntity="OC\PrepBundle\Entity\TricksGroup", inversedBy="tricks", cascade={"persist", "remove"})
+     * @ORM\JoinColumn(name="group_id", referencedColumnName="id")
      */
     private $group;
 

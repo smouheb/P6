@@ -1,7 +1,6 @@
 <?php
 
 namespace OC\PrepBundle\Repository;
-
 /**
  * TrickRepository
  *
@@ -10,21 +9,69 @@ namespace OC\PrepBundle\Repository;
  */
 class TrickRepository extends \Doctrine\ORM\EntityRepository
 {
-    public function findIdToJoin($id)
+    public function findTrick($id)
     {
-        $em = $this->getEntityManager()->createQuery(
-            'SELECT t, p from OCPrepBundle:Trick t
-                JOIN t.picture p
-                WHERE p.id = :id'
-        )->setParameter('id', $id);
+        $em = $this->getEntityManager()->createQueryBuilder();
+
+        $qb = $em->select('t')
+                 ->from('OCPrepBundle:Trick', 't')
+                 ->where('t.id = :id')
+                 ->setParameter('id',$id);
+
+        $result = $qb->getQuery()->getResult();
 
         try{
 
-            return $em->getResult();
+            return $result;
 
         }catch (\Doctrine\ORM\NoResultException $e){
 
             return null;
         }
     }
+
+    public function findTrickAndPics($id)
+    {
+        $em = $this->getEntityManager()->createQueryBuilder();
+        $qb = $em->select(array('t','p'))
+            ->from('OCPrepBundle:Picture', 'p')
+            ->join('p.trick', 't')
+            ->where('t.id = :id')
+            ->andWhere('p.trick = t.id')
+            ->setParameter('id',$id);
+
+        $result = $qb->getQuery()->getResult();
+
+        try{
+
+            return $result;
+
+        }catch (\Doctrine\ORM\NoResultException $e){
+
+            return null;
+        }
+    }
+
+    public function findTrickAndVideo($id)
+    {
+        $em = $this->getEntityManager()->createQueryBuilder();
+        $qb = $em->select(array('t','v'))
+            ->from('OCPrepBundle:Video', 'v')
+            ->join('v.trick', 't')
+            ->where('t.id = :id')
+            ->andWhere('v.trick = t.id')
+            ->setParameter('id',$id);
+
+        $result = $qb->getQuery()->getResult();
+
+        try{
+
+            return $result;
+
+        }catch (\Doctrine\ORM\NoResultException $e){
+
+            return null;
+        }
+    }
+
 }

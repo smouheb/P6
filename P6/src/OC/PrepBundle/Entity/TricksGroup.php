@@ -58,6 +58,16 @@ class TricksGroup
     private $updated_by;
 
     /**
+     * @ORM\OneToMany(targetEntity="OC\PrepBundle\Entity\Trick", mappedBy="group")
+     */
+    private $tricks;
+
+    public function __construct()
+    {
+        $this->tricks = new ArrayCollection();
+    }
+
+    /**
      * Get id
      *
      * @return int
@@ -187,4 +197,38 @@ class TricksGroup
         return $this->updated_by;
     }
 
+
+    /**
+     * Add trick
+     *
+     * @param \OC\PrepBundle\Entity\Trick $trick
+     *
+     * @return TricksGroup
+     */
+    public function addTrick(\OC\PrepBundle\Entity\Trick $trick)
+    {
+        $this->tricks[] = $trick;
+
+        return $this;
+    }
+
+    /**
+     * Remove trick
+     *
+     * @param \OC\PrepBundle\Entity\Trick $trick
+     */
+    public function removeTrick(\OC\PrepBundle\Entity\Trick $trick)
+    {
+        $this->tricks->removeElement($trick);
+    }
+
+    /**
+     * Get tricks
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getTricks()
+    {
+        return $this->tricks;
+    }
 }

@@ -28,7 +28,7 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
 /**
- * Show information about mapped entities.
+ * ShowController information about mapped entities.
  *
  * @link    www.doctrine-project.org
  * @since   2.4

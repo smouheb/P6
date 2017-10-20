@@ -2,6 +2,7 @@
 
 namespace OC\PrepBundle\Form;
 
+use Doctrine\ORM\Mapping\Entity;
 use OC\PrepBundle\Entity\TricksGroup;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
@@ -29,10 +30,10 @@ class TrickType extends AbstractType
 
                 //Adding the group where the trick will actually belog
 
-                ->add('Group', TricksGroupType::class, [
-                    'by_reference' => false,
-                ])
-
+                ->add('Group', EntityType::class,[
+                            'class' => 'OCPrepBundle:TricksGroup',
+                            'choice_label' => 'groupName'
+                    ])
                 //Addind the Picture url input
 
                ->add('picture', CollectionType::class, [

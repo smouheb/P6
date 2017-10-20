@@ -25,7 +25,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Command\Command;
 
 /**
- * Show information about mapped entities.
+ * ShowController information about mapped entities.
  *
  * @link    www.doctrine-project.org
  * @since   2.1
@@ -40,7 +40,7 @@ class InfoCommand extends Command
     {
         $this
             ->setName('orm:info')
-            ->setDescription('Show basic information about all mapped entities')
+            ->setDescription('ShowController basic information about all mapped entities')
             ->setHelp(<<<EOT
 The <info>%command.name%</info> shows basic information about which
 entities exist and possibly if their mapping information contains errors or

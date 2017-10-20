@@ -1,6 +1,9 @@
 {% extends "OCPrepBundle::layout.html.twig" %}
-
 {% block body%}
+    {% for message in app.flashes('success') %}
+        <div class="alert alert-success">{{ message }}</div>
+        <span class="glyphicon glyphicon-remove-circle"></span>
+    {% endfor %}
     <section class="jumbotron text-center" style="
             background-image: url({{ asset('pics/alesia-kazantceva-362303.jpg') }});
             height:300px;
@@ -18,7 +21,21 @@
                     <a href="{{ path('oc_prep_action',{'id':pics.trick.id}) }}">
                         <img src="{{ pics.url }}" alt="Card image cap" style="max-width:350px;max-height:280px">
                     </a>
-                    <p class="card-text">{{ pics.trick.description }}</p>
+                    <div>
+                        <p class="card-text">{{ pics.trick.description }}</p>
+                    </div>
+                    <!-- Pencil icon by Icons8 -->
+                    <div>
+                       <a href="{{ path('oc_prep_edit', {'id':pics.trick.id }) }}">
+                           <i class="material-icons right-align">create</i>
+                       </a>
+                    </div>
+                    <div>
+                        <a href="{{ path('oc_prep_delete', {'id':pics.trick.id }) }}">
+                            <i class="material-icons right-align">delete</i>
+                        </a>
+                    </div>
+
                 </div>
                 {% endfor %}
             </div>

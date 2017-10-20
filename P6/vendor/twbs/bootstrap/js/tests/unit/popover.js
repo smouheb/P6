@@ -210,7 +210,7 @@ $(function () {
       handlerCalled = true
     })
 
-    var $div = $('<div><a href="#">Show popover</a></div>')
+    var $div = $('<div><a href="#">ShowController popover</a></div>')
       .appendTo('#qunit-fixture')
       .bootstrapPopover({
         html: true,
