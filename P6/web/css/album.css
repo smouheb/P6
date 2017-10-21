@@ -1,6 +1,23 @@
 body {
   min-height: 75rem; /* Can be removed; just added for demo purposes */
 }
+#bg {
+  position: fixed;
+  background-size: cover;
+    z-index: -1;
+  /* Preserve aspet ratio */
+    top:0;
+    bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.titleadd {
+    color: #ffffdd;
+    font-family: 'Princess Sofia', cursive;
+    font-size: 100px;
+    padding: 10px;
+}
 
 .navbar {
   margin-bottom: 0;
