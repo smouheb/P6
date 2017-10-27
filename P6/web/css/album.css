@@ -11,12 +11,31 @@ body {
   min-width: 100%;
   min-height: 100%;
 }
+.carousel {
+    position: relative;
+    height: 100%;
+}
+.d-block {
+    width: 800px;
+    z-index: 0;
+    height: 550px;
+}
 
+.well {
+    font-weight: bold;
+    text-align: center;
+}
 .titleadd {
     color: #ffffdd;
     font-family: 'Princess Sofia', cursive;
     font-size: 100px;
     padding: 10px;
+}
+
+#addgroup {
+
+    padding: 0;
+    bottom: 0;
 }
 
 .navbar {

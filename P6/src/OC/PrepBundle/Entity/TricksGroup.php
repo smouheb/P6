@@ -3,6 +3,7 @@
 namespace OC\PrepBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\ORM\Event\LifecycleEventArgs;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -10,6 +11,7 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Table(name="tricks_group")
  * @ORM\Entity(repositoryClass="OC\PrepBundle\Repository\TricksGroupRepository")
+ * @ORM\HasLifecycleCallbacks()
  */
 class TricksGroup
 {
@@ -58,12 +60,13 @@ class TricksGroup
     private $updated_by;
 
     /**
-     * @ORM\OneToMany(targetEntity="OC\PrepBundle\Entity\Trick", mappedBy="group", cascade={"remove"})
+     * @ORM\OneToMany(targetEntity="OC\PrepBundle\Entity\Trick", mappedBy="group", cascade={"persist","remove"})
      */
     private $tricks;
 
     public function __construct()
     {
+        $this->createdAt = new \DateTime('now');
         $this->tricks = new ArrayCollection();
     }
 
@@ -71,10 +74,13 @@ class TricksGroup
      * Get id
      *
      * @return int
+     * @ORM\PrePersist
      */
     public function getGroupId()
     {
+
         return $this->groupId;
+
     }
     /**
      * Set groupName

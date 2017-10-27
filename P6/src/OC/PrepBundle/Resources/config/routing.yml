@@ -1,9 +1,9 @@
 oc_prep_homepage:
     path:     /
-    defaults: { _controller: OCPrepBundle:Prep:index }
+    defaults: { _controller: OCPrepBundle:Default:index }
 oc_prep_add:
     path:    /add-trick
-    defaults: { _controller: OCPrepBundle:Prep:add }
+    defaults: { _controller: OCPrepBundle:Add:add }
 oc_prep_action:
     path:    /show/{id}
     defaults: { _controller: OCPrepBundle:Show:show}
@@ -13,3 +13,9 @@ oc_prep_edit:
 oc_prep_delete:
     path:    /delete/{id}
     defaults: { _controller: OCPrepBundle:Delete:delete }
+oc_prep_group:
+    path:    /add-group
+    defaults: { _controller: OCPrepBundle:Add:newGroup}
+oc_prep_delgroup:
+    path:    /delete-group/{id}
+    defaults: { _controller: OCPrepBundle:Delete:deleteGroup }

@@ -1,8 +1,7 @@
 {% extends "OCPrepBundle::layout.html.twig" %}
 {% block body%}
     {% for message in app.flashes('success') %}
-        <div class="alert alert-success">{{ message }}</div>
-        <span class="glyphicon glyphicon-remove-circle"></span>
+        <div class="alert alert-success" id="bansuccess">{{ message }}</div>
     {% endfor %}
     <section class="jumbotron text-center" style="
             background-image: url({{ asset('pics/alesia-kazantceva-362303.jpg') }});

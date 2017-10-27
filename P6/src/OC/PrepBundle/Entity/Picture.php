@@ -1,7 +1,6 @@
 <?php
 
 namespace OC\PrepBundle\Entity;
-
 use Doctrine\ORM\Mapping as ORM;
 
 /**

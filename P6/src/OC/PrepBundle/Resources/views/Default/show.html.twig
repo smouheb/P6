@@ -21,18 +21,23 @@
         </div>
         {% endfor %}
     </div>
+    {% set data = picture|merge(video) %}
     <div class="container-fluid" style="background-color: #2b669a">
         <div class="row col-md-4" style="padding-top: 100px; padding-left: 350px">
             <div id="my_carousel" class="carousel slide mx-auto" data-ride="carousel" data-interval="3000">
                 <ol class="carousel-indicators">
-                    {% for p in picture %}
+                    {% for media in data %}
                         <li data-target="#my_carousel" data-slide-to="{{ loop.index0 }}" class="{% if loop.index0 == 0 %}active{% endif %}"></li>
                     {% endfor %}
                 </ol>
                 <div class="carousel-inner col-md-12 no-padding" role="listbox">
-                    {% for p in picture %}
+                    {% for media in data %}
                         <div {% if loop.first %} class="carousel-item active" {% else %} class="carousel-item" {% endif %}>
-                            <img class="d-block" alt="picture" src="{{ p.url }}" style="min-width: 350px; min-height: 300px; max-width: 500px; max-height: 500px"/>
+                            {% if media == picture %}
+                            <img class="d-block pics" alt="picture" src="{{ media.url }}"/>
+                            {% else %}
+                            <iframe class="d-block" src="{{ media.url }}"></iframe>
+                            {% endif %}
                         </div>
                     {% endfor %}
                 </div>
@@ -41,24 +46,6 @@
         <br/>
         <br/>
         <br/>
-        <div class="row col-sm-2 text-center top10 bottom10" style="padding-left: 300px; align-content: center">
-            <div id="my_carousel" class="carousel slide mx-auto" data-ride="carousel" data-interval="3000">
-                <ol class="carousel-indicators">
-                    {% for v in video %}
-                        <li data-target="#my_carousel" data-slide-to="{{ loop.index0 }}" class="{% if loop.index0 == 0 %}active{% endif %}"></li>
-                    {% endfor %}
-                </ol>
-                <div class="video video-responsive">
-                    {% for v in video %}
-                        <div {% if loop.first %} class="carousel-item active" {% else %} class="carousel-item" {% endif %}>
-                            <a>
-                               <iframe width="560" height="315" src="{{ v.url }}" frameborder="0" allowfullscreen></iframe>
-                            </a>
-                        </div>
-                    {% endfor %}
-                </div>
-            </div>
-        </div>
     </div>
     <br/>
     <div class="container-fluid">

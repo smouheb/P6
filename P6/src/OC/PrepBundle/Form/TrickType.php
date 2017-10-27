@@ -2,20 +2,12 @@
 
 namespace OC\PrepBundle\Form;
 
-use Doctrine\ORM\Mapping\Entity;
-use OC\PrepBundle\Entity\TricksGroup;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
-use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
-use Symfony\Component\Form\Extension\Core\Type\DateType;
-use Symfony\Component\Form\Extension\Core\Type\FileType;
-use Symfony\Component\Form\Extension\Core\Type\FormType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
-use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 class TrickType extends AbstractType
@@ -25,15 +17,20 @@ class TrickType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('name', TextType::class)
-                ->add('description', TextType::class)
+        $builder->add('name', TextType::class, array(
+                            'label' => 'Enter a Trick name'
+                ))
+                ->add('description', TextType::class, array(
+                            'label' => 'Enter a description'
+                ))
 
-                //Adding the group where the trick will actually belog
-
+                //Adding the group where the trick will actually belong
                 ->add('Group', EntityType::class,[
+                            'label' => 'Select a group',
                             'class' => 'OCPrepBundle:TricksGroup',
                             'choice_label' => 'groupName'
                     ])
+
                 //Addind the Picture url input
 
                ->add('picture', CollectionType::class, [

@@ -24,9 +24,9 @@ class Video
     /**
      * @var string
      *
-     * @ORM\Column(name="url", type="text")
+     * @ORM\Column(name="video_url", type="text")
      */
-    private $url;
+    private $videourl;
 
     /**
      * @var \DateTime
@@ -65,25 +65,25 @@ class Video
     /**
      * Set url
      *
-     * @param string $url
+     * @param string $videourl
      *
      * @return Video
      */
-    public function setUrl($url)
+    public function setUrl($videourl)
     {
-        $this->url = $url;
+        $this->videourl = $videourl;
 
         return $this;
     }
 
     /**
-     * Get url
+     * Get $videourl
      *
      * @return string
      */
     public function getUrl()
     {
-        return $this->url;
+        return $this->videourl;
     }
 
     /**
@@ -156,5 +156,29 @@ class Video
     public function getTrick()
     {
         return $this->trick;
+    }
+
+    /**
+     * Set videourl
+     *
+     * @param string $videourl
+     *
+     * @return Video
+     */
+    public function setVideourl($videourl)
+    {
+        $this->videourl = $videourl;
+
+        return $this;
+    }
+
+    /**
+     * Get videourl
+     *
+     * @return string
+     */
+    public function getVideourl()
+    {
+        return $this->videourl;
     }
 }

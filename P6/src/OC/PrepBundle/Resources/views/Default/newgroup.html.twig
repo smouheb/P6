@@ -1,0 +1,12 @@
+{% extends "OCPrepBundle::layout.html.twig" %}
+    {% block body %}
+        <br/>
+        <h1 class="text-center titleadd">Add Group</h1>
+        <img src="{{ asset('pics/snow-mountain-works-wallpaper.jpg') }}" id="bg" alt="">
+        <div class="well col-md-6 bg-info">
+            {{ form_start(form) }}
+                {{ form_row(form.groupName) }}
+                {{ form_row(form.Submit) }}
+            {{ form_end(form) }}
+        </div>
+    {% endblock %}
