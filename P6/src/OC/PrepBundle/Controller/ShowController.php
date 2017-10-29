@@ -57,7 +57,7 @@ class ShowController extends Controller
         $paginaton = $paginator->paginate(
           $allcomments,
           $request->query->getInt('page',1),
-          1
+          10
         );
 
         //============================= Rendering the template ===============================//

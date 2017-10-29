@@ -21,7 +21,14 @@ class TricksGroupType extends AbstractType
         $builder->add('groupName', TextType::class,[
                 'label' => 'Add a group',
                 'attr' => ['placeholder' => 'group name such as 360 etc...']])
-                ->add('Submit', SubmitType::class);
+
+                ->add('Create', SubmitType::class);
+
+               /* ->add('Group', EntityType::class,[
+                'label' => 'Select a group',
+                'class' => 'OCPrepBundle:TricksGroup',
+                'choice_label' => 'groupName'
+            ]);*/
     }
     /**
      *

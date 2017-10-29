@@ -1,6 +1,46 @@
 body {
   min-height: 75rem; /* Can be removed; just added for demo purposes */
 }
+.thumbnail {
+    padding:0px !important;
+}
+.panel {
+    position:relative !important;
+}
+.panel>.panel-heading:after,.panel>.panel-heading:before{
+    position:absolute !important;
+    top:11px;left:-16px !important;
+    right:100% !important;
+    width:0 !important;
+    height:0 !important;
+    display:block !important;
+    content:" " !important;
+    border-color:transparent !important;
+    border-style:solid solid outset !important;
+    pointer-events:none !important;
+}
+.panel>.panel-heading:after{
+    border-width:7px !important;
+    border-right-color:#f7f7f7 !important;
+    margin-top:1px !important;
+    margin-left:2px !important;
+}
+.panel>.panel-heading:before{
+    border-right-color:#ddd !important;
+    border-width:8px !important;
+}
+.bannermid {
+    background-color: #2b669a;
+    background-size: cover;
+    z-index: -2;
+}
+.bannertop {
+    height:100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+}
+
 #bg {
   position: fixed;
   background-size: cover;
