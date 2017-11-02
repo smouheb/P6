@@ -1,7 +1,10 @@
 <?php
 
 namespace OC\PrepBundle\Entity;
+
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\EntityManager;
+use Symfony\Component\Validator\Constraints\DateTime;
 
 /**
  * Picture
