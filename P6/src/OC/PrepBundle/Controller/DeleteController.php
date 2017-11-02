@@ -21,12 +21,12 @@ class DeleteController extends Controller
 
     public function deleteGroupAction(TricksGroup $group)
     {
-        $em = $this->getDoctrine()->getManager();
-        $em->remove($group);
-        $em->flush();
+            $em = $this->getDoctrine()->getManager();
+            $em->remove($group);
+            $em->flush();
 
-        $this->addFlash('success', 'Group type deleted');
+            $this->addFlash('success', 'Group type deleted');
 
-        return $this->redirectToRoute('oc_prep_group');
+            return $this->redirectToRoute('oc_prep_add');
     }
 }

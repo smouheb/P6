@@ -20,10 +20,8 @@
                 {{ form_row(form.description) }}
                 {{ form_row(form.Group) }}
             <div class=" text-right" id="addgroup">
-                <a href="{{ path('oc_prep_group')}}" class="btn btn-success text-right">Add Groups</a>
+                <a href="{{ path('oc_prep_group')}}" class="btn btn-success text-right">Edit Groups</a>
             </div>
-            <br/>
-            <br/>
             <br/>
                 {{ form_row(form.picture) }}
                 {{ form_row(form.video) }}
@@ -32,12 +30,10 @@
             </div>
             {{ form_end(form) }}
             <br/>
-            <br/>
             <div class="text-right">
                 <a href="#" id="add_picture" class="btn btn-primary text-right">Add Picture</a>
                 <a href="#" id="add_video" class="btn btn-primary text-right">Add Video</a>
             </div>
-            <br/>
             <br/>
             {# ... #}
         </div>

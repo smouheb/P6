@@ -69,28 +69,28 @@ class AddAnnotatedClassesToCachePassTest extends TestCase
         $this->assertSame(array('Foo\\Bar', 'Foo\\BarTest'), $expand(array('Foo\\*', 'Foo\\*Test'), array('Foo\\Bar', 'Foo\\BarTest')));
 
         $this->assertSame(
-            'Acme\\FooBundle\\Controller\\AddController',
-            $expand(array('**Bundle\\Controller\\'), array('\\Acme\\FooBundle\\Controller\\AddController'))[0]
+            'Acme\\FooBundle\\Controller\\DefaultController',
+            $expand(array('**Bundle\\Controller\\'), array('\\Acme\\FooBundle\\Controller\\DefaultController'))[0]
         );
 
         $this->assertSame(
-            'FooBundle\\Controller\\AddController',
-            $expand(array('**Bundle\\Controller\\'), array('\\FooBundle\\Controller\\AddController'))[0]
+            'FooBundle\\Controller\\DefaultController',
+            $expand(array('**Bundle\\Controller\\'), array('\\FooBundle\\Controller\\DefaultController'))[0]
         );
 
         $this->assertSame(
-            'Acme\\FooBundle\\Controller\\Bar\\AddController',
-            $expand(array('**Bundle\\Controller\\'), array('\\Acme\\FooBundle\\Controller\\Bar\\AddController'))[0]
+            'Acme\\FooBundle\\Controller\\Bar\\DefaultController',
+            $expand(array('**Bundle\\Controller\\'), array('\\Acme\\FooBundle\\Controller\\Bar\\DefaultController'))[0]
         );
 
         $this->assertSame(
-            'Bundle\\Controller\\Bar\\AddController',
-            $expand(array('**Bundle\\Controller\\'), array('\\Bundle\\Controller\\Bar\\AddController'))[0]
+            'Bundle\\Controller\\Bar\\DefaultController',
+            $expand(array('**Bundle\\Controller\\'), array('\\Bundle\\Controller\\Bar\\DefaultController'))[0]
         );
 
         $this->assertSame(
-            'Acme\\Bundle\\Controller\\Bar\\AddController',
-            $expand(array('**Bundle\\Controller\\'), array('\\Acme\\Bundle\\Controller\\Bar\\AddController'))[0]
+            'Acme\\Bundle\\Controller\\Bar\\DefaultController',
+            $expand(array('**Bundle\\Controller\\'), array('\\Acme\\Bundle\\Controller\\Bar\\DefaultController'))[0]
         );
 
         $this->assertSame('Foo\\Bar', $expand(array('Foo\\Bar'), array())[0]);

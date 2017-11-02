@@ -15,10 +15,10 @@ class AddController extends Controller
     {
         $trick = new Trick();
 
-        $form = $this->createForm( TrickType::class, $trick);
+        $form = $this->createForm(TrickType::class, $trick);
         $form->handleRequest($request);
 
-        if($form->isSubmitted() && $form->isValid()){
+        if ($form->isSubmitted() && $form->isValid()) {
 
             $em = $this->getDoctrine()->getManager();
             $em->persist($trick);
@@ -29,8 +29,10 @@ class AddController extends Controller
             return $this->redirectToRoute('oc_prep_homepage');
 
         }
+
         return $this->render('OCPrepBundle:Default:add.html.twig', array(
-            'form' =>$form->createView(),
+
+            'form' => $form->createView()
         ));
     }
 
@@ -39,26 +41,44 @@ class AddController extends Controller
         $group = new TricksGroup();
 
         $form = $this->createForm(TricksGroupType::class, $group);
+
         $form->handleRequest($request);
 
-        if($form->isSubmitted() && $form->isValid()){
+        if($form->getClickedButton() && 'Remove' === $form->getClickedButton()->getName()) {
 
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($group);
-            $em->flush();
+            $id = $form->getData();
 
-            if(!$form->isValid()){
+            foreach ($id as $item){
 
-                $this->addFlash('error', 'Group not valid please try again!');
+                $item->getGroupId();
+
+                dump($item);
+                exit;
             }
 
-            $this->addFlash('success', 'Group created successfully!');
 
-            return $this->redirectToRoute('oc_prep_add');
+                return $this->redirectToRoute('oc_prep_delgroup', array('id' => $item));
+
         }
+
+        if($form->getClickedButton() && 'Remove' !== $form->getClickedButton()->getName()) {
+
+            if ($form->isSubmitted() && $form->isValid()) {
+
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($group);
+                $em->flush();
+
+                $this->addFlash('success', 'Group created successfully!');
+
+                return $this->redirectToRoute('oc_prep_add');
+            }
+        }
+
         return $this->render('OCPrepBundle:Default:newgroup.html.twig', [
 
-            'form' => $form->createView()
+            'form' => $form->createView(),
         ]);
     }
+
 }

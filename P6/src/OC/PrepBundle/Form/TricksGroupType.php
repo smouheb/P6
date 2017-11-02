@@ -2,10 +2,9 @@
 
 namespace OC\PrepBundle\Form;
 
-use Proxies\__CG__\OC\PrepBundle\Entity\TricksGroup;
+use OC\PrepBundle\Entity\TricksGroup;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -18,17 +17,35 @@ class TricksGroupType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('groupName', TextType::class,[
-                'label' => 'Add a group',
-                'attr' => ['placeholder' => 'group name such as 360 etc...']])
+        $builder->add('groupName', TextType::class, [
+                            'label' => 'Add a group',
+                            'required' => false,
+                            'attr' => ['placeholder' => 'group name such as 360 etc...']
+                ])
 
-                ->add('Create', SubmitType::class);
+                ->add('Create', SubmitType::class, [
+                    'attr' => ['class' => 'btn btn-success']
+                ])
 
-               /* ->add('Group', EntityType::class,[
-                'label' => 'Select a group',
-                'class' => 'OCPrepBundle:TricksGroup',
-                'choice_label' => 'groupName'
-            ]);*/
+                ->add('groupId', EntityType::class, [
+
+                    'label' => 'Select a group',
+                    'class' => 'OCPrepBundle:TricksGroup',
+                    'choice_label' => function(TricksGroup $group){
+
+                        $id = $group->getGroupId();
+                        $groupname = $group->getGroupName();
+
+                        $idandname = $id.'-'.$groupname;
+
+                        return $idandname;
+
+                    }
+                ])
+
+                ->add('Remove', SubmitType::class, [
+                    'attr' => ['class' => 'btn btn-danger']
+                ]);
     }
     /**
      *

@@ -82,6 +82,21 @@ class TricksGroup
         return $this->groupId;
 
     }
+
+    /**
+     * Set id
+     *
+     * @param integer $groupId
+     *
+     * @return TricksGroup
+     */
+    public function setGroupId($groupId)
+    {
+        $this->groupId = $groupId;
+
+        return $this;
+    }
+
     /**
      * Set groupName
      *

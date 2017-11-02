@@ -18,4 +18,4 @@ oc_prep_group:
     defaults: { _controller: OCPrepBundle:Add:newGroup}
 oc_prep_delgroup:
     path:    /delete-group/{id}
-    defaults: { _controller: OCPrepBundle:Delete:deleteGroup }
+    defaults: { _controller: OCPrepBundle:Delete:deleteGroup}

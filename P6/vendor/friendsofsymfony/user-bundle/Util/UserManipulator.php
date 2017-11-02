@@ -27,7 +27,7 @@ use Symfony\Component\HttpFoundation\RequestStack;
 class UserManipulator
 {
     /**
-     * User manager.
+     * UserCred manager.
      *
      * @var UserManagerInterface
      */
@@ -214,7 +214,7 @@ class UserManipulator
         $user = $this->userManager->findUserByUsername($username);
 
         if (!$user) {
-            throw new \InvalidArgumentException(sprintf('User identified by "%s" username does not exist.', $username));
+            throw new \InvalidArgumentException(sprintf('UserCred identified by "%s" username does not exist.', $username));
         }
 
         return $user;

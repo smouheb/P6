@@ -101,7 +101,7 @@ abstract class User implements UserInterface, GroupableInterface
     protected $roles;
 
     /**
-     * User constructor.
+     * UserCred constructor.
      */
     public function __construct()
     {
@@ -151,11 +151,11 @@ abstract class User implements UserInterface, GroupableInterface
         $data = unserialize($serialized);
 
         if (13 === count($data)) {
-            // Unserializing a User object from 1.3.x
+            // Unserializing a UserCred object from 1.3.x
             unset($data[4], $data[5], $data[6], $data[9], $data[10]);
             $data = array_values($data);
         } elseif (11 === count($data)) {
-            // Unserializing a User from a dev version somewhere between 2.0-alpha3 and 2.0-beta1
+            // Unserializing a UserCred from a dev version somewhere between 2.0-alpha3 and 2.0-beta1
             unset($data[4], $data[7], $data[8]);
             $data = array_values($data);
         }

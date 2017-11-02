@@ -15,7 +15,7 @@ use FOS\UserBundle\Util\CanonicalFieldsUpdater;
 use FOS\UserBundle\Util\PasswordUpdaterInterface;
 
 /**
- * Abstract User Manager implementation which can be used as base class for your
+ * Abstract UserCred Manager implementation which can be used as base class for your
  * concrete manager.
  *
  * @author Johannes M. Schmitt <schmittjoh@gmail.com>
