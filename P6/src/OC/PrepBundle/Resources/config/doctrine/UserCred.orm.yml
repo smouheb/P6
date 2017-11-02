@@ -1,0 +1,11 @@
+OC\PrepBundle\Entity\UserCred:
+    type: entity
+    table: null
+    repositoryClass: OC\PrepBundle\Repository\UserCredRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    lifecycleCallbacks: {  }
