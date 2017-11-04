@@ -24,16 +24,16 @@ class TrickType extends AbstractType
                 ->add('description', TextType::class, array(
                             'label' => 'Enter a description'
                 ))
-
                 //Adding the group where the trick will actually belong
                 ->add('Group', EntityType::class,[
                             'label' => 'Select a group',
                             'class' => 'OCPrepBundle:TricksGroup',
-                            'choice_label' => 'groupName'
+                            'choice_label' => function(TricksGroup $group){
+                                $name = $group->getGroupName();
+                                return $name;
+                            }
                     ])
-
                 //Addind the Picture url input
-
                ->add('picture', CollectionType::class, [
                         'entry_type' => PictureType::class,
                         'allow_add' => true,
@@ -48,7 +48,6 @@ class TrickType extends AbstractType
                  ])
                 ->add('submit', SubmitType::class, array('label' => 'Submit'));
     }
-    
     /**
      * {@inheritdoc}
      */

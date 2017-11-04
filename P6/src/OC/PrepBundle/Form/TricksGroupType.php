@@ -32,14 +32,8 @@ class TricksGroupType extends AbstractType
                     'label' => 'Select a group',
                     'class' => 'OCPrepBundle:TricksGroup',
                     'choice_label' => function(TricksGroup $group){
-
-                        $id = $group->getGroupId();
                         $groupname = $group->getGroupName();
-
-                        $idandname = $id.'-'.$groupname;
-
-                        return $idandname;
-
+                        return $groupname;
                     }
                 ])
 

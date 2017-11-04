@@ -1,5 +1,11 @@
 {% extends "OCPrepBundle::layout.html.twig" %}
     {% block body %}
+        {% set error = app.flashes('error') %}
+        {% if error %}
+            {% for message in app.flashes('error') %}
+                <div class="alert alert-danger" id="bansuccess">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
         <br/>
         <h1 class="text-center titleadd">Add Group</h1>
         <img src="{{ asset('pics/snow-mountain-works-wallpaper.jpg') }}" id="bg" alt="">

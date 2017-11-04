@@ -46,18 +46,20 @@ class AddController extends Controller
 
         if($form->getClickedButton() && 'Remove' === $form->getClickedButton()->getName()) {
 
-            $id = $form->getData();
+            if (!$form->isSubmitted() || !$form->isValid()){
 
-            foreach ($id as $item){
+                $this->addFlash('error', 'Invalid form please try again!');
 
-                $item->getGroupId();
 
-                dump($item);
-                exit;
             }
+            $id[] = $form->getData()->getGroupId();
 
+            foreach ($id as $idreturned){
 
-                return $this->redirectToRoute('oc_prep_delgroup', array('id' => $item));
+                $x = $idreturned->getGroupId();
+
+            }
+                return $this->redirectToRoute('oc_prep_delgroup', array('id' => $x));
 
         }
 
@@ -72,7 +74,13 @@ class AddController extends Controller
                 $this->addFlash('success', 'Group created successfully!');
 
                 return $this->redirectToRoute('oc_prep_add');
+
+            } elseif (!$form->isSubmitted() || !$form->isValid()) {
+
+                $this->addFlash('error', 'Invalid form please try again!');
+
             }
+
         }
 
         return $this->render('OCPrepBundle:Default:newgroup.html.twig', [
