@@ -11,6 +11,7 @@ namespace PackageVersions;
 final class Versions
 {
     const VERSIONS = array (
+  'behat/transliterator' => 'v1.2.0@826ce7e9c2a6664c0d1f381cbb38b1fb80a7ee2c',
   'components/font-awesome' => '4.7.0@885308b939369d147bec93174722786bc2c4eedd',
   'components/jquery' => '3.2.1@e5534d4ab8e80c159553d507e358ed20a806d3bf',
   'composer/ca-bundle' => '1.0.8@9dd73a03951357922d8aee6cc084500de93e2343',
@@ -31,6 +32,7 @@ final class Versions
   'friendsofsymfony/user-bundle' => 'v2.0.1@4f92bfbb8742ac8cc195d0b34bf8ecd83b62404a',
   'incenteev/composer-parameter-handler' => 'v2.1.2@d7ce7f06136109e81d1cb9d57066c4d4a99cf1cc',
   'jdorn/sql-formatter' => 'v1.2.17@64990d96e0959dff8e059dfcdc1af130728d92bc',
+  'jms/metadata' => '1.6.0@6a06970a10e0a532fb52d3959547123b84a3b3ab',
   'knplabs/knp-components' => '1.3.5@a03bbd87ecf9e56db6f7533db2c63d6da6cd5f33',
   'knplabs/knp-paginator-bundle' => 'v2.6.0@293abb6a2f1ae53ace5796d0ef3e5ae1b8f92371',
   'kriswallsmith/assetic' => 'v1.4.0@e911c437dbdf006a8f62c2f59b15b2d69a5e0aa1',
@@ -60,11 +62,12 @@ final class Versions
   'symfony/symfony' => 'v3.3.10@cfef3b2d505ae4375b17032bd03ed9a3da4b7b43',
   'twbs/bootstrap' => 'v3.3.7@0b9c4a4007c44201dce9a6cc1a38407005c26c86',
   'twig/twig' => 'v2.4.4@eddb97148ad779f27e670e1e3f19fb323aedafeb',
+  'vich/uploader-bundle' => '1.6.2@5a5f27598ba3885104bce447539b5227704f0aa5',
   'zendframework/zend-code' => '3.1.0@2899c17f83a7207f2d7f53ec2f421204d3beea27',
   'zendframework/zend-eventmanager' => '3.2.0@9d72db10ceb6e42fb92350c0cb54460da61bd79c',
   'sensio/generator-bundle' => 'v3.1.6@128bc5dabc91ca40b7445f094968dd70ccd58305',
   'symfony/phpunit-bridge' => 'v3.3.10@6e40d1c8bc4037edf3852c0b29fdd2923c4e2133',
-  'macbookair/p6' => '9999999-dev@87f79f5296c564b9b6dd1457545da64bfdef4db1',
+  'macbookair/p6' => '1.0.0.0@',
 );
 
     private function __construct()

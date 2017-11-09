@@ -71,7 +71,7 @@ class Trick
     private $video;
 
     /**
-     * @ORM\ManyToOne(targetEntity="OC\PrepBundle\Entity\TricksGroup", inversedBy="tricks", cascade={"persist", "remove"})
+     * @ORM\ManyToOne(targetEntity="OC\PrepBundle\Entity\TricksGroup", inversedBy="tricks", cascade={"persist"})
      * @ORM\JoinColumn(name="group_id", referencedColumnName="id")
      */
     private $group;

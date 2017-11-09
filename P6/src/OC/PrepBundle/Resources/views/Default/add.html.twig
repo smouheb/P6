@@ -19,9 +19,11 @@
                 {{ form_row(form.name) }}
                 {{ form_row(form.description) }}
                 {{ form_row(form.Group) }}
-            <div class=" text-right" id="addgroup">
-                <a href="{{ path('oc_prep_group')}}" class="btn btn-success text-right">Edit Groups</a>
-            </div>
+            {% if is_granted('ROLE_ADMIN') %}
+                <div class=" text-right" id="addgroup">
+                    <a href="{{ path('oc_prep_group')}}" class="btn btn-success text-right">Edit Groups</a>
+                </div>
+            {% endif %}
             <br/>
                 {{ form_row(form.picture) }}
                 {{ form_row(form.video) }}

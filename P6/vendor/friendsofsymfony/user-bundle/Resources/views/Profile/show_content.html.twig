@@ -1,6 +1,36 @@
 {% trans_default_domain 'FOSUserBundle' %}
-
-<div class="fos_user_user_show">
-    <p>{{ 'profile.show.username'|trans }}: {{ user.username }}</p>
-    <p>{{ 'profile.show.email'|trans }}: {{ user.email }}</p>
-</div>
+{% block body %}
+    <br/>
+    <br/>
+    <table class="table table-bordered fos_user_user_show text-center center" style="width: auto">
+        <thead class="bg-info text-white">
+            <tr>
+                <th>{{ 'profile.show.username'|trans }}</th>
+                <th>{{ 'profile.show.email'|trans }}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    {{ user.username }}
+                </td>
+                <td>
+                    {{ user.email }}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+        <div class="text-justify">
+            <a class="btn btn-info" href="{{ path('fos_user_profile_edit') }}">Edit</a>
+        </div>
+        <br/>
+        <div class="text-justify">
+            <a class="btn btn-info" href="{{ path('fos_user_resetting_request') }}">Password Reset</a>
+        </div>
+    {% elseif is_granted('IS_AUTHENTICATED_REMEMBERED') == false %}
+        <div>
+            <a class="btn btn-info" href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
+        </div>
+    {% endif %}
+{% endblock %}

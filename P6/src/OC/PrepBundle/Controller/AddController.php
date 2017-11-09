@@ -6,6 +6,8 @@ use OC\PrepBundle\Entity\TricksGroup;
 use OC\PrepBundle\Form\TricksGroupType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+
 use OC\PrepBundle\Entity\Trick;
 use OC\PrepBundle\Form\TrickType;
 
@@ -62,7 +64,6 @@ class AddController extends Controller
                 return $this->redirectToRoute('oc_prep_delgroup', array('id' => $x));
 
         }
-
         if($form->getClickedButton() && 'Remove' !== $form->getClickedButton()->getName()) {
 
             if ($form->isSubmitted() && $form->isValid()) {
@@ -78,11 +79,9 @@ class AddController extends Controller
             } elseif (!$form->isSubmitted() || !$form->isValid()) {
 
                 $this->addFlash('error', 'Invalid form please try again!');
-
             }
 
         }
-
         return $this->render('OCPrepBundle:Default:newgroup.html.twig', [
 
             'form' => $form->createView(),

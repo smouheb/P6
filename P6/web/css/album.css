@@ -1,12 +1,29 @@
 body {
   min-height: 75rem; /* Can be removed; just added for demo purposes */
 }
+
 .thumbnail {
     padding:0px !important;
 }
+
+.texthome {
+
+    font-size: 25px;
+    background-color: whitesmoke;
+    color: lightslategray;
+    font-weight: 300;
+    vertical-align: baseline;
+    margin: 0;
+    padding: 25px;
+    text-align: justify;
+    font-family: 'Roboto', sans-serif;
+
+}
+
 .panel {
     position:relative !important;
 }
+
 .panel>.panel-heading:after,.panel>.panel-heading:before{
     position:absolute !important;
     top:11px;left:-16px !important;

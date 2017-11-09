@@ -13,6 +13,7 @@ namespace FOS\UserBundle\Form\Type;
 
 use FOS\UserBundle\Util\LegacyFormHelper;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -45,6 +46,9 @@ class RegistrationFormType extends AbstractType
                 'first_options' => array('label' => 'form.password'),
                 'second_options' => array('label' => 'form.password_confirmation'),
                 'invalid_message' => 'fos_user.password.mismatch',
+            ))
+            ->add('image', FileType::class, array(
+                        'label' => 'upload your image'
             ))
         ;
     }

@@ -47,13 +47,27 @@
         <br/>
         <br/>
     </div>
+    {% if is_granted('ROLE_USER') %}
     <div class="container-fluid col-md-12">
         <br/>
         <div class="col-md-offset-2 col-md-4 table-bordered bg-info" style="color: white">
+            <!--Form to send messages -->
             {{ form(form) }}
         </div>
         <br/>
     </div>
+    {% elseif is_granted('ROLE_ADMIN') %}
+    <div class="container-fluid col-md-12">
+        <br/>
+        <div class="col-md-offset-2 col-md-4 table-bordered bg-info" style="color: white">
+            <!--Form to send messages -->
+            {{ form_start(form) }}
+            {{ form_row(form.description) }}
+            {{ form_end(form) }}
+        </div>
+        <br/>
+    </div>
+    {% endif %}
     <div class="container-fluid bg-info">
         <br/>
         <h2 class="text-center" style="color: white">Last comments</h2>
@@ -83,5 +97,4 @@
     {# display navigation #}
     <br/>
     <br/>
-
 {% endblock %}

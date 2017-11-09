@@ -8,10 +8,11 @@ imports:
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: en
+    image_directory: '/web/uploads'
 
 framework:
     #esi: ~
-    #translator: { fallbacks: ['%locale%'] }
+    translator: { fallbacks: ['%locale%'] }
     secret: '%secret%'
     router:
         resource: '%kernel.project_dir%/app/config/routing.yml'
@@ -171,7 +172,19 @@ knp_paginator:
 fos_user:
     db_driver: orm
     firewall_name: main
-    user_class: UserBundle\Entity\User
+    user_class: OC\PrepBundle\Entity\Users
     from_email:
         address: "smael.mouheb@gmail.com"
         sender_name: "Admin"
+
+vich_uploader:
+    db_driver: orm
+
+    mappings:
+        product_image:
+            uri_prefix:    '%image_directory%'
+            upload_destination: '%kernel.root_dir%/../web/uploads'
+
+            inject_on_load:     false
+            delete_on_update:   true
+            delete_on_remove:   true

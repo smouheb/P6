@@ -11,6 +11,8 @@
                 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
                 <script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
                 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+                <!-- Compiled and minified JavaScript -->
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
                 <script src="{{ asset('js/appscript.js') }}"></script>
             {% endblock %}
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
@@ -18,6 +20,7 @@
             <link href="{{ asset('css/album.css') }}" rel="stylesheet">
             <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
             <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+            <!-- Compiled and minified CSS -->
         </head>
     {% endblock %}
     <body>
@@ -25,23 +28,49 @@
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand text-white" href="{{ path('oc_prep_homepage') }}">Home</a>
+        <div>
+            <a class="navbar-brand text-white" href="{{ path('oc_prep_homepage') }}">
+                <i class="large material-icons">home</i>
+            </a>
+            <a href="{{ path('fos_user_profile_show') }}">
+                {% if is_granted('ROLE_USER') %}
+                    <span class="navbar-brand text-white text-right" style="padding-left: 50px">
+                    {{app.user.username }}
+                </span>
+                {% elseif is_granted('ROLE_ADMIN') %}
+                    <span class="navbar-brand text-center">
+                    {{app.user.username }}
+                </span>
+                {% endif %}
+            </a>
+        </div>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
+                {% if is_granted('ROLE_USER') %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('oc_prep_add') }}" style="color: #fff;">Add Tricks</a>
+                    </li>
+                {% elseif is_granted('ROLE_ADMIN') %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('oc_prep_add') }}" style="color: #fff;">Add Tricks</a>
+                    </li>
+                {% endif %}
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ path('oc_prep_add') }}" style="color: #fff;">Add Tricks</a>
+                {% if is_granted('ROLE_USER') %}
+                    <a class="nav-link" href="{{ path('fos_user_security_logout') }}" style="color: #fff;">LOGOUT</a>
+                {% elseif is_granted('ROLE_ADMIN') %} }}
+                    <a class="nav-link" href="{{ path('fos_user_security_logout') }}" style="color: #fff;">LOGOUT</a>
+                {% else %}
+                    <a class="nav-link" href="{{ path('fos_user_security_login') }}" style="color: #fff;">LOGIN</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" style="color: #fff;">Sign In</a>
+                    <a class="nav-link" href="{{ path('fos_user_registration_register') }}" style="color: #fff;">SIGN UP</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#" style="color: #fff;">Sign Up</a>
-                </li>
+                {% endif %}
             </ul>
         </div>
     </nav>
     {% block body %}
-
     {% endblock %}
     </body>
 </html>

@@ -26,6 +26,8 @@ class ShowController extends Controller
 
         $comment->setTrick($id);
 
+        $comment->setCreatedBy($this->getUser());
+
         if($form->isSubmitted() && $form->isValid()) {
 
             $em = $this->getDoctrine()->getManager();

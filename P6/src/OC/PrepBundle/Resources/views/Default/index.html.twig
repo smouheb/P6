@@ -12,6 +12,21 @@
             <h1 class="jumbotron-heading text-muted" style="font-family: 'Princess Sofia', cursive;font-size: 180px;">SnowTricks</h1>
         </div>
     </section>
+    <section>
+        <p class="texthome">
+            This webiste is dedicated to show you the best possible tricks out there...
+            <br/>
+            Checkout all the pictures and videos that are regularly posted.
+            And if you want to post messages or even create your own tricks that you think should be posted here then create an account,
+             by following the link
+            <span class="badge badge-info">
+                <a style="text-decoration: none; color: white" href="{{ path('fos_user_registration_register') }}">right here</a>
+            </span>
+            <br/>
+            Hope you will enjoy it...
+            <br/>
+        </p>
+    </section>
     <div class="bg-info album text-muted">
         <div class="container">
             <div class="row">
@@ -21,15 +36,24 @@
                         <a href="{{ path('oc_prep_action',{'id':pics.trick.id}) }}">
                             <img src="{{ pics.url }}" alt="Card image cap" style=" width: 250px;height: 280px;">
                         </a>
-                        <div class="card-header bg-faded text-right">
+                        <div class="card-header bg-faded text-right" style=" width: 250px;">
                             <p class="text-left">{{ pics.trick.description }}</p>
                         <!-- Pencil icon by Icons8 -->
-                           <a href="{{ path('oc_prep_edit', {'id':pics.trick.id }) }}">
-                               <i class="material-icons right-align">create</i>
-                           </a>
-                            <a href="{{ path('oc_prep_delete', {'id':pics.trick.id }) }}">
-                                <i class="material-icons right-align">delete</i>
-                            </a>
+                            {% if is_granted('ROLE_USER') %}
+                               <a href="{{ path('oc_prep_edit', {'id':pics.trick.id }) }}">
+                                   <i class="material-icons right-align">create</i>
+                               </a>
+                                <a href="{{ path('oc_prep_delete', {'id':pics.trick.id }) }}">
+                                    <i class="material-icons right-align">delete</i>
+                                </a>
+                            {% elseif is_granted('ROLE_ADMIN') %}
+                                <a href="{{ path('oc_prep_edit', {'id':pics.trick.id }) }}">
+                                    <i class="material-icons right-align">create</i>
+                                </a>
+                                <a href="{{ path('oc_prep_delete', {'id':pics.trick.id }) }}">
+                                    <i class="material-icons right-align">delete</i>
+                                </a>
+                            {% endif %}
                         </div>
                     </div>
                 </div>

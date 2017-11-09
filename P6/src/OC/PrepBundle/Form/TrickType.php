@@ -31,8 +31,8 @@ class TrickType extends AbstractType
                             'choice_label' => function(TricksGroup $group){
                                 $name = $group->getGroupName();
                                 return $name;
-                            }
-                    ])
+                            }]
+                )
                 //Addind the Picture url input
                ->add('picture', CollectionType::class, [
                         'entry_type' => PictureType::class,

@@ -5,6 +5,7 @@ namespace OC\PrepBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\EntityManager;
 use Symfony\Component\Validator\Constraints\DateTime;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Picture
@@ -48,6 +49,13 @@ class Picture
      * @ORM\ManyToOne(targetEntity="OC\PrepBundle\Entity\Trick", inversedBy="picture")
      */
     private $trick;
+
+    /**
+     * @var string
+     * @ORM\Column(name="image", type="string", nullable=true)
+     * @Assert\File(mimeTypes={"image/png", "image/jpg"})
+     */
+    protected $image;
 
     public function __construct()
     {
@@ -161,4 +169,28 @@ class Picture
     }
 
 
+
+    /**
+     * Set image
+     *
+     * @param string $image
+     *
+     * @return Picture
+     */
+    public function setImage($image)
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    /**
+     * Get image
+     *
+     * @return string
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
 }

@@ -25,6 +25,10 @@ class ComposerStaticInit9c703106418ed578153b023b4fb44d52
             'Zend\\EventManager\\' => 18,
             'Zend\\Code\\' => 10,
         ),
+        'V' => 
+        array (
+            'Vich\\UploaderBundle\\' => 20,
+        ),
         'T' => 
         array (
             'Twig\\' => 5,
@@ -103,6 +107,10 @@ class ComposerStaticInit9c703106418ed578153b023b4fb44d52
         'Zend\\Code\\' => 
         array (
             0 => __DIR__ . '/..' . '/zendframework/zend-code/src',
+        ),
+        'Vich\\UploaderBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/vich/uploader-bundle',
         ),
         'Twig\\' => 
         array (
@@ -296,6 +304,13 @@ class ComposerStaticInit9c703106418ed578153b023b4fb44d52
                 0 => __DIR__ . '/..' . '/ocramius/proxy-manager/src',
             ),
         ),
+        'M' => 
+        array (
+            'Metadata\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/jms/metadata/src',
+            ),
+        ),
         'L' => 
         array (
             'Less' => 
@@ -327,6 +342,13 @@ class ComposerStaticInit9c703106418ed578153b023b4fb44d52
             'Doctrine\\Common\\Collections\\' => 
             array (
                 0 => __DIR__ . '/..' . '/doctrine/collections/lib',
+            ),
+        ),
+        'B' => 
+        array (
+            'Behat\\Transliterator' => 
+            array (
+                0 => __DIR__ . '/..' . '/behat/transliterator/src',
             ),
         ),
         'A' => 
