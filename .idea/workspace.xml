@@ -2,43 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f2eae33f-d183-4580-8bfd-661793a5d503" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/P6/app/DoctrineMigrations/Version20171102054419.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/a6c7afca-0d92-45a4-8b2e-3eaa2ff3d131.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/a6c7afca-0d92-45a4-8b2e-3eaa2ff3d131.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/P6/app/AppKernel.php" afterPath="$PROJECT_DIR$/P6/app/AppKernel.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/P6/app/config/config.yml" afterPath="$PROJECT_DIR$/P6/app/config/config.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/P6/composer.json" afterPath="$PROJECT_DIR$/P6/composer.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/P6/composer.lock" afterPath="$PROJECT_DIR$/P6/composer.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/P6/src/OC/PrepBundle/Controller/AddController.php" afterPath="$PROJECT_DIR$/P6/src/OC/PrepBundle/Controller/AddController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/P6/src/OC/PrepBundle/Controller/ShowController.php" afterPath="$PROJECT_DIR$/P6/src/OC/PrepBundle/Controller/ShowController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/P6/src/OC/PrepBundle/Entity/Picture.php" afterPath="$PROJECT_DIR$/P6/src/OC/PrepBundle/Entity/Picture.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/P6/src/OC/PrepBundle/Entity/Trick.php" afterPath="$PROJECT_DIR$/P6/src/OC/PrepBundle/Entity/Trick.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/P6/src/OC/PrepBundle/Entity/TricksGroup.php" afterPath="$PROJECT_DIR$/P6/src/OC/PrepBundle/Entity/TricksGroup.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/P6/src/OC/PrepBundle/Form/CommentType.php" afterPath="$PROJECT_DIR$/P6/src/OC/PrepBundle/Form/CommentType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/P6/src/OC/PrepBundle/Form/PictureType.php" afterPath="$PROJECT_DIR$/P6/src/OC/PrepBundle/Form/PictureType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/P6/src/OC/PrepBundle/Form/TrickType.php" afterPath="$PROJECT_DIR$/P6/src/OC/PrepBundle/Form/TrickType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/P6/src/OC/PrepBundle/Resources/config/services.yml" afterPath="$PROJECT_DIR$/P6/src/OC/PrepBundle/Resources/config/services.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/P6/src/OC/PrepBundle/Resources/views/Default/add.html.twig" afterPath="$PROJECT_DIR$/P6/src/OC/PrepBundle/Resources/views/Default/add.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/P6/src/OC/PrepBundle/Resources/views/Default/index.html.twig" afterPath="$PROJECT_DIR$/P6/src/OC/PrepBundle/Resources/views/Default/index.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/P6/src/OC/PrepBundle/Resources/views/Default/show.html.twig" afterPath="$PROJECT_DIR$/P6/src/OC/PrepBundle/Resources/views/Default/show.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/P6/src/OC/PrepBundle/Resources/views/layout.html.twig" afterPath="$PROJECT_DIR$/P6/src/OC/PrepBundle/Resources/views/layout.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/P6/vendor/composer/autoload_namespaces.php" afterPath="$PROJECT_DIR$/P6/vendor/composer/autoload_namespaces.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/P6/vendor/composer/autoload_psr4.php" afterPath="$PROJECT_DIR$/P6/vendor/composer/autoload_psr4.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/P6/vendor/composer/autoload_static.php" afterPath="$PROJECT_DIR$/P6/vendor/composer/autoload_static.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/P6/vendor/composer/installed.json" afterPath="$PROJECT_DIR$/P6/vendor/composer/installed.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/P6/vendor/friendsofsymfony/user-bundle/Controller/RegistrationController.php" afterPath="$PROJECT_DIR$/P6/vendor/friendsofsymfony/user-bundle/Controller/RegistrationController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/P6/vendor/friendsofsymfony/user-bundle/Form/Type/RegistrationFormType.php" afterPath="$PROJECT_DIR$/P6/vendor/friendsofsymfony/user-bundle/Form/Type/RegistrationFormType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/P6/vendor/friendsofsymfony/user-bundle/Resources/views/ChangePassword/change_password_content.html.twig" afterPath="$PROJECT_DIR$/P6/vendor/friendsofsymfony/user-bundle/Resources/views/ChangePassword/change_password_content.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/P6/vendor/friendsofsymfony/user-bundle/Resources/views/Group/edit_content.html.twig" afterPath="$PROJECT_DIR$/P6/vendor/friendsofsymfony/user-bundle/Resources/views/Group/edit_content.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/P6/vendor/friendsofsymfony/user-bundle/Resources/views/Profile/edit_content.html.twig" afterPath="$PROJECT_DIR$/P6/vendor/friendsofsymfony/user-bundle/Resources/views/Profile/edit_content.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/P6/vendor/friendsofsymfony/user-bundle/Resources/views/Profile/show_content.html.twig" afterPath="$PROJECT_DIR$/P6/vendor/friendsofsymfony/user-bundle/Resources/views/Profile/show_content.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/P6/vendor/friendsofsymfony/user-bundle/Resources/views/Registration/register_content.html.twig" afterPath="$PROJECT_DIR$/P6/vendor/friendsofsymfony/user-bundle/Resources/views/Registration/register_content.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/P6/vendor/friendsofsymfony/user-bundle/Resources/views/Resetting/request_content.html.twig" afterPath="$PROJECT_DIR$/P6/vendor/friendsofsymfony/user-bundle/Resources/views/Resetting/request_content.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/P6/vendor/friendsofsymfony/user-bundle/Resources/views/Resetting/reset_content.html.twig" afterPath="$PROJECT_DIR$/P6/vendor/friendsofsymfony/user-bundle/Resources/views/Resetting/reset_content.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/P6/vendor/friendsofsymfony/user-bundle/Resources/views/Security/login_content.html.twig" afterPath="$PROJECT_DIR$/P6/vendor/friendsofsymfony/user-bundle/Resources/views/Security/login_content.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/P6/vendor/friendsofsymfony/user-bundle/Resources/views/layout.html.twig" afterPath="$PROJECT_DIR$/P6/vendor/friendsofsymfony/user-bundle/Resources/views/layout.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/P6/vendor/ocramius/package-versions/src/PackageVersions/Versions.php" afterPath="$PROJECT_DIR$/P6/vendor/ocramius/package-versions/src/PackageVersions/Versions.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/P6/web/css/album.css" afterPath="$PROJECT_DIR$/P6/web/css/album.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/README.md" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -105,7 +69,7 @@
         <entry file="file://$PROJECT_DIR$/P6/src/OC/PrepBundle/Entity/Users.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="269">
-              <caret line="27" column="18" lean-forward="true" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="18" />
+              <caret line="27" column="18" lean-forward="false" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="18" />
               <folding>
                 <element signature="e#40#72#0#PHP" expanded="true" />
               </folding>
@@ -157,7 +121,7 @@
         <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/a6c7afca-0d92-45a4-8b2e-3eaa2ff3d131/console.sql">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="430">
-              <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+              <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -796,12 +760,12 @@
       <workItem from="1508478417677" duration="46224000" />
       <workItem from="1509081665047" duration="55499000" />
       <workItem from="1509493724717" duration="13883000" />
-      <workItem from="1509641420673" duration="87129000" />
+      <workItem from="1509641420673" duration="87531000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="384022000" />
+    <option name="totallyTimeSpent" value="384424000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -814,7 +778,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="42" y="23" width="1398" height="877" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297568" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.58343947" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -825,7 +788,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299363" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3133758" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3133758" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1307,7 +1270,7 @@
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/a6c7afca-0d92-45a4-8b2e-3eaa2ff3d131/console.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="430">
-          <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1315,7 +1278,7 @@
     <entry file="file://$PROJECT_DIR$/P6/src/OC/PrepBundle/Entity/Users.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="269">
-          <caret line="27" column="18" lean-forward="true" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="18" />
+          <caret line="27" column="18" lean-forward="false" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="18" />
           <folding>
             <element signature="e#40#72#0#PHP" expanded="true" />
           </folding>
