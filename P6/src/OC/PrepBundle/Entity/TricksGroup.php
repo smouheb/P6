@@ -36,7 +36,7 @@ class TricksGroup
      *
      * @ORM\Column(name="created_at", type="datetime")
      */
-    private $createdAt;
+    private $creationTime;
 
     /**
      * @var \DateTime
@@ -66,7 +66,7 @@ class TricksGroup
 
     public function __construct()
     {
-        $this->createdAt = new \DateTime('now');
+        $this->creationTime = new \DateTime('now');
         $this->tricks = new ArrayCollection();
     }
 
@@ -125,13 +125,13 @@ class TricksGroup
     /**
      * Set createdAt
      *
-     * @param \DateTime $createdAt
+     * @param \DateTime $creationTime
      *
      * @return TricksGroup
      */
-    public function setCreatedAt($createdAt)
+    public function setCreationTime($creationTime)
     {
-        $this->createdAt = $createdAt;
+        $this->creationTime = $creationTime;
 
         return $this;
     }
@@ -141,9 +141,9 @@ class TricksGroup
      *
      * @return \DateTime
      */
-    public function getCreatedAt()
+    public function getCreationTime()
     {
-        return $this->createdAt;
+        return $this->creationTime;
     }
 
     /**
