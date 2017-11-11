@@ -4,8 +4,7 @@ namespace OC\PrepBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
-use Doctrine\ORM\EntityManager;
-use Symfony\Component\Validator\Constraints\DateTime;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Trick
@@ -28,6 +27,7 @@ class Trick
      * @var \DateTime
      *
      * @ORM\Column(name="created_at", type="datetime")
+     * @Assert\DateTime()
      */
     private $createdAt;
 
@@ -35,6 +35,7 @@ class Trick
      * @var \DateTime
      *
      * @ORM\Column(name="updated_at", type="datetime", nullable=true)
+     *
      */
     private $updatedAt;
 
@@ -56,17 +57,25 @@ class Trick
      * @var string
      *
      * @ORM\Column(name="name", type="string", length=255, unique=true)
+     * @Assert\NotBlank()
+     * @Assert\Length(
+     *     min = 3,
+     *     max = 15,
+     *     minMessage=" The name is too short, expected at least 3 characters",
+     *     maxMessage="the name is too long, max length is 15 characters")
      */
     private $name;
 
     /**
      * @var ArrayCollection $picture
      * @ORM\OneToMany(targetEntity="OC\PrepBundle\Entity\Picture", mappedBy="trick", cascade={"persist","remove"})
+     *
      */
     private $picture;
 
     /**
      * @ORM\OneToMany(targetEntity="OC\PrepBundle\Entity\Video", mappedBy="trick", cascade={"persist", "remove"})
+     *
      */
     private $video;
 
@@ -80,6 +89,10 @@ class Trick
      * @var string
      *
      * @ORM\Column(name="description", type="string", length=255, nullable=true)
+     * @Assert\NotBlank()
+     * @Assert\Length(
+     *     min = 10,
+     *     minMessage="The name is too short, expected at least 10 characters")
      */
     private $description;
 

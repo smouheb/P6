@@ -1,14 +1,9 @@
 {% extends "OCPrepBundle::layout.html.twig" %}
     {% block body %}
         {% set success = app.flashes('success') %}
-        {% set error = app.flashes('error') %}
         {% if success %}
             {% for message in success %}
                 <div class="alert alert-success" id="bansuccess">{{ message }}</div>
-            {% endfor %}
-        {% elseif error %}
-            {% for message in app.flashes('error') %}
-                <div class="alert alert-danger" id="bansuccess">{{ message }}</div>
             {% endfor %}
         {% endif %}
         <br/>
@@ -17,7 +12,9 @@
         <div class="well col-md-6 bg-info text-justify">
             {{ form_start(form) }}
                 {{ form_row(form.name) }}
+                {{ form_errors(form) }}
                 {{ form_row(form.description) }}
+                {{ form_errors(form) }}
                 {{ form_row(form.Group) }}
             {% if is_granted('ROLE_ADMIN') %}
                 <div class=" text-right" id="addgroup">
@@ -26,7 +23,9 @@
             {% endif %}
             <br/>
                 {{ form_row(form.picture) }}
+                {{ form_errors(form) }}
                 {{ form_row(form.video) }}
+               <div class="has-error" >{{ form_errors(form) }}</div>
             <div class="text-right">
                 {{ form_row(form.submit) }}
             </div>

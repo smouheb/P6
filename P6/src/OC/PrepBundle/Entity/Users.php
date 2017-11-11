@@ -7,7 +7,7 @@ use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\Security\Core\User\User;
 use FOS\UserBundle\Model\User as BaseUser;
 use Symfony\Component\Validator\Constraints as Assert;
-use Vich\UploaderBundle\Mapping\{Annotation as Vich};
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * Users
@@ -34,11 +34,12 @@ class Users extends BaseUser
     protected $image;
 
     /**
-     * @Assert\File(maxSize = "4000k",
-     *     mimeTypes = {"image/png", "image/jpg"},
+     * @Assert\File(maxSize = "40000k",
+     *     mimeTypes = {"image/png", "image/jpg", "image/jpeg"},
      *     mimeTypesMessage = "Please upload a valid images")
      *
      * @Vich\UploadableField(mapping="product_image", fileNameProperty="image")
+     *
      * @var File
      */
     protected $imageFile;

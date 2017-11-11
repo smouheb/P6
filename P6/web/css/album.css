@@ -6,6 +6,12 @@ body {
     padding:0px !important;
 }
 
+img.resize {
+
+    width: 100px;
+    height: 100px;
+}
+
 .texthome {
 
     font-size: 25px;
@@ -70,12 +76,14 @@ body {
 }
 .carousel {
     position: relative;
+    padding-left: 50px;
     height: 100%;
 }
 .d-block {
-    width: 800px;
+    width: 100%;
     z-index: 0;
     height: 550px;
+    overflow: hidden;
 }
 
 .well {

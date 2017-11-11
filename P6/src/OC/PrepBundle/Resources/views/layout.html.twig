@@ -24,47 +24,49 @@
         </head>
     {% endblock %}
     <body>
-    <nav class="navbar navbar-light bg-info">
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <nav class="navbar navbar-toggleable-md navbar-light bg-info">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div>
-            <a class="navbar-brand text-white" href="{{ path('oc_prep_homepage') }}">
-                <i class="large material-icons">home</i>
-            </a>
-            <a href="{{ path('fos_user_profile_show') }}">
-                {% if is_granted('ROLE_USER') %}
-                    <span class="navbar-brand text-white text-right" style="padding-left: 50px">
-                    {{app.user.username }}
-                </span>
-                {% elseif is_granted('ROLE_ADMIN') %}
-                    <span class="navbar-brand text-center">
-                    {{app.user.username }}
-                </span>
-                {% endif %}
-            </a>
-        </div>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-                {% if is_granted('ROLE_USER') %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ path('oc_prep_add') }}" style="color: #fff;">Add Tricks</a>
-                    </li>
-                {% elseif is_granted('ROLE_ADMIN') %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ path('oc_prep_add') }}" style="color: #fff;">Add Tricks</a>
-                    </li>
-                {% endif %}
-                <li class="nav-item">
-                {% if is_granted('ROLE_USER') %}
-                    <a class="nav-link" href="{{ path('fos_user_security_logout') }}" style="color: #fff;">LOGOUT</a>
-                {% elseif is_granted('ROLE_ADMIN') %} }}
-                    <a class="nav-link" href="{{ path('fos_user_security_logout') }}" style="color: #fff;">LOGOUT</a>
-                {% else %}
-                    <a class="nav-link" href="{{ path('fos_user_security_login') }}" style="color: #fff;">LOGIN</a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="navbar-brand text-white" href="{{ path('oc_prep_homepage') }}">
+                        <i class="large material-icons">home</i>
+                    </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ path('fos_user_registration_register') }}" style="color: #fff;">SIGN UP</a>
+                    <a href="{{ path('fos_user_profile_show') }}">
+                        {% if is_granted('ROLE_USER') %}
+                            <span class="navbar-brand text-white text-right" style="padding-left: 50px">
+                                {{app.user.username }}
+                            </span>
+                        {% elseif is_granted('ROLE_ADMIN') %}
+                            <span class="navbar-brand text-center">
+                            {{app.user.username }}
+                        </span>
+                        {% endif %}
+                    </a>
+                </li>
+                {% if is_granted('ROLE_USER') %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('oc_prep_add') }}" style="color: #fff;">Add Tricks</a>
+                    </li>
+                {% elseif is_granted('ROLE_ADMIN') %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('oc_prep_add') }}" style="color: #fff;">Add Tricks</a>
+                    </li>
+                {% endif %}
+                <li class="nav-item">
+                {% if is_granted('ROLE_USER') %}
+                    <a class="nav-link" href="{{ path('fos_user_security_logout') }}" style="color: #fff;">Logout</a>
+                {% elseif is_granted('ROLE_ADMIN') %} }}
+                    <a class="nav-link" href="{{ path('fos_user_security_logout') }}" style="color: #fff;">Logout</a>
+                {% else %}
+                    <a class="nav-link" href="{{ path('fos_user_security_login') }}" style="color: #fff;">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('fos_user_registration_register') }}" style="color: #fff;">Sign Up</a>
                 </li>
                 {% endif %}
             </ul>

@@ -1,7 +1,7 @@
 //alert will disappear after few milliseconds
 $(document).ready(function(){
     setTimeout(function() {
-        $('.alert').fadeOut('fast');
+        $('.alert').fadeOut('slow');
     }, 2000);
 });
 

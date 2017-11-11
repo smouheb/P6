@@ -3,6 +3,7 @@
 namespace OC\PrepBundle\Controller;
 
 use OC\PrepBundle\Entity\Comment;
+use OC\PrepBundle\Entity\Users;
 use OC\PrepBundle\Form\CommentType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -62,6 +63,11 @@ class ShowController extends Controller
           10
         );
 
+        //=============== query to get user picture =====//
+
+        $em = $this->getDoctrine()->getManager()->getRepository(Users::class);
+        $allusers = $em->findAll();
+
         //============================= Rendering the template ===============================//
         return $this->render('OCPrepBundle:Default:show.html.twig', array(
 
@@ -69,6 +75,7 @@ class ShowController extends Controller
             'picture'=> $picture,
             'video' => $video,
             'paginaton' => $paginaton,
+            'path' => $allusers,
             'form' => $form->createView()
         ));
     }

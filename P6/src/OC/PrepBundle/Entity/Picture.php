@@ -4,7 +4,6 @@ namespace OC\PrepBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\EntityManager;
-use Symfony\Component\Validator\Constraints\DateTime;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
@@ -28,6 +27,11 @@ class Picture
      * @var string
      *
      * @ORM\Column(name="url", type="string", length=255)
+     *
+     * @Assert\Url(
+     *     message ="this url is not valid",
+     *     checkDNS = true
+     *     )
      */
     private $url;
 

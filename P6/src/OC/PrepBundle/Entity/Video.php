@@ -5,6 +5,7 @@ namespace OC\PrepBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\EntityManager;
+use Symfony\Component\Validator\Constraints as Assert;
 
 
 /**
@@ -25,9 +26,14 @@ class Video
     private $id;
 
     /**
-     * @var string
      *
      * @ORM\Column(name="video_url", type="text")
+     *
+     * @Assert\UrL(
+     *     message ="This url is not valid",
+     *     checkDNS = true
+     *     )
+     *
      */
     private $videourl;
 

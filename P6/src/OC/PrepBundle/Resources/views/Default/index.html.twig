@@ -17,7 +17,7 @@
             This webiste is dedicated to show you the best possible tricks out there...
             <br/>
             Checkout all the pictures and videos that are regularly posted.
-            And if you want to post messages or even create your own tricks that you think should be posted here then create an account,
+            And if you want to post messages or even create your own tricks that you think should be posted here... then reate an account
              by following the link
             <span class="badge badge-info">
                 <a style="text-decoration: none; color: white" href="{{ path('fos_user_registration_register') }}">right here</a>
@@ -37,6 +37,7 @@
                             <img src="{{ pics.url }}" alt="Card image cap" style=" width: 250px;height: 280px;">
                         </a>
                         <div class="card-header bg-faded text-right" style=" width: 250px;">
+                            <h3 class="text-center">{{ pics.trick.group.groupName }}</h3>
                             <p class="text-left">{{ pics.trick.description }}</p>
                         <!-- Pencil icon by Icons8 -->
                             {% if is_granted('ROLE_USER') %}

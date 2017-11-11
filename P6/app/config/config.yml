@@ -176,13 +176,19 @@ fos_user:
     from_email:
         address: "smael.mouheb@gmail.com"
         sender_name: "Admin"
+    registration:
+        form:
+            type: OC\PrepBundle\Form\RegistrationFormType
+    profile:
+        form:
+            type: OC\PrepBundle\Form\ProfileFormType
 
 vich_uploader:
     db_driver: orm
 
     mappings:
         product_image:
-            uri_prefix:    '%image_directory%'
+            uri_prefix:    /uploads
             upload_destination: '%kernel.root_dir%/../web/uploads'
 
             inject_on_load:     false

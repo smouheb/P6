@@ -15,34 +15,41 @@
                 <br/>
                 <br/>
             <div class="col-md-12 bottom5 text-center">
-                <p>{{ t.description }}</p>
+                <h2>{{ t.description }}</h2>
                 <br/>
+                <H1>Part of the group {{ t.group.groupName }}</H1>
             </div>
         </div>
         {% endfor %}
+        <br/>
     </div>
     {% set data = picture|merge(video) %}
-    <div class="container-fluid bannermid" style="background-image: url({{ asset('pics/backgroundshow.jpg') }});">
-        <div class="row col-md-4" style="padding-top: 100px; padding-left: 350px">
-            <div id="my_carousel" class="carousel slide mx-auto" data-ride="carousel" data-interval="3000">
+    <div class="container-fluid" style="background-image: url({{ asset('pics/backgroundshow.jpg') }});">
+        <br/>
+            <div id="my_carousel" class="carousel slide col-md-11" data-interval="false">
                 <ol class="carousel-indicators">
                     {% for media in data %}
                         <li data-target="#my_carousel" data-slide-to="{{ loop.index0 }}" class="{% if loop.index0 == 0 %}active{% endif %}"></li>
                     {% endfor %}
                 </ol>
-                <div class="carousel-inner col-md-12 no-padding" role="listbox">
-                    {% for media in data %}
-                        <div {% if loop.first %} class="carousel-item active" {% else %} class="carousel-item" {% endif %}>
-                            {% if media == picture %}
-                            <img class="d-block pics" alt="picture" src="{{ media.url }}"/>
-                            {% else %}
-                            <iframe class="d-block" src="{{ media.url }}"></iframe>
-                            {% endif %}
-                        </div>
-                    {% endfor %}
+                <div class="carousel-inner no-padding" role="listbox">
+                {% for media in data %}
+                    <div {% if loop.first %} class="carousel-item active" {% else %} class="carousel-item" {% endif %}>
+                    {% if media == picture %}
+                    <img class="img-responsive center-block" alt="picture" src="{{ media.url }}"/>
+                    {% else %}
+                    <iframe class="d-block" src="{{ media.url }}"></iframe>
+                    {% endif %}
+                </div>
+                    <a class="carousel-control-next" href="#my_carousel" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    </a>
+                    <a class="carousel-control-prev" href="#my_carousel" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    </a>
+                {% endfor %}
                 </div>
             </div>
-        </div>
         <br/>
         <br/>
         <br/>
@@ -76,7 +83,11 @@
             {% for comments in paginaton %}
             <div class="card col-md-7">
                 <div class="card-header bg-info">
-                    <img class="img-thumbnail col-md-2" src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png">
+                {% for image in path %}
+                    {% if image.username == comments.createdBy %}
+                        <img class="thumbnail resize" src="{{asset('uploads/'~image.image~'')}}">
+                    {% endif %}
+                {% endfor %}
                     <strong>{{ comments.createdBy }}</strong>
                     <span class="text-left" style="color: white;">{{ comments.createdAt|date('d/m/Y H:i:s') }}</span>
                     <br/>
