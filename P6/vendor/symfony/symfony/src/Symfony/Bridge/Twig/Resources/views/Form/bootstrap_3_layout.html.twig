@@ -186,10 +186,14 @@
 {% endblock %}
 
 {% block checkbox_label -%}
+    {%- set label_attr = label_attr|merge({'for': id}) -%}
+
     {{- block('checkbox_radio_label') -}}
 {%- endblock checkbox_label %}
 
 {% block radio_label -%}
+    {%- set label_attr = label_attr|merge({'for': id}) -%}
+
     {{- block('checkbox_radio_label') -}}
 {%- endblock radio_label %}
 
@@ -275,7 +279,7 @@
     {% if form.parent %}<span class="help-block">{% else %}<div class="alert alert-danger">{% endif %}
     <ul class="list-unstyled">
         {%- for error in errors -%}
-            <li class="alert alert-danger"><span class="glyphicon glyphicon-exclamation-sign"></span> {{ error.message }}</li>
+            <li><span class="glyphicon glyphicon-exclamation-sign"></span> {{ error.message }}</li>
         {%- endfor -%}
     </ul>
     {% if form.parent %}</span>{% else %}</div>{% endif %}

@@ -15,7 +15,7 @@ security:
         username: Username
         password: Password
         remember_me: Ricordami
-        submit: Login
+        submit: Login.png
 
 profile:
     show:
@@ -76,7 +76,7 @@ resetting:
 # Global strings
 layout:
     logout: Logout
-    login: Login
+    login: Login.png
     register: Registra
     logged_in_as: 'Collegato come %username%'
 

@@ -5,12 +5,16 @@ namespace OC\PrepBundle\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+
 
 /**
  * Trick
  *
  * @ORM\Table(name="tricks_creation")
  * @ORM\Entity(repositoryClass="OC\PrepBundle\Repository\TrickRepository")
+ *
+ * @UniqueEntity("name", message="This is already in use")
  */
 class Trick
 {
@@ -54,7 +58,7 @@ class Trick
     private $updated_by;
 
     /**
-     * @var string
+     * @var string $name
      *
      * @ORM\Column(name="name", type="string", length=255, unique=true)
      * @Assert\NotBlank()

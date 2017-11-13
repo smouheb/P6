@@ -35,7 +35,7 @@ $(function () {
   QUnit.test('should activate element by tab id', function (assert) {
     assert.expect(2)
     var tabsHTML = '<ul class="tabs">'
-        + '<li><a href="#home">Home</a></li>'
+        + '<li><a href="#home">Home.png</a></li>'
         + '<li><a href="#profile">Profile</a></li>'
         + '</ul>'
 
@@ -51,7 +51,7 @@ $(function () {
   QUnit.test('should activate element by tab id', function (assert) {
     assert.expect(2)
     var pillsHTML = '<ul class="pills">'
-        + '<li><a href="#home">Home</a></li>'
+        + '<li><a href="#home">Home.png</a></li>'
         + '<li><a href="#profile">Profile</a></li>'
         + '</ul>'
 
@@ -113,7 +113,7 @@ $(function () {
     var done = assert.async()
 
     var tabsHTML = '<ul class="tabs">'
-        + '<li><a href="#home">Home</a></li>'
+        + '<li><a href="#home">Home.png</a></li>'
         + '<li><a href="#profile">Profile</a></li>'
         + '</ul>'
 
@@ -144,7 +144,7 @@ $(function () {
     var done = assert.async()
 
     var tabsHTML = '<ul class="tabs">'
-        + '<li><a href="#home">Home</a></li>'
+        + '<li><a href="#home">Home.png</a></li>'
         + '<li><a href="#profile">Profile</a></li>'
         + '</ul>'
 
@@ -169,7 +169,7 @@ $(function () {
     var done = assert.async()
 
     var tabsHTML = '<ul class="tabs">'
-        + '<li><a href="#home">Home</a></li>'
+        + '<li><a href="#home">Home.png</a></li>'
         + '<li><a href="#profile">Profile</a></li>'
         + '</ul>'
 
@@ -191,7 +191,7 @@ $(function () {
   QUnit.test('selected tab should have aria-expanded', function (assert) {
     assert.expect(8)
     var tabsHTML = '<ul class="nav nav-tabs">'
-        + '<li class="active"><a href="#home" toggle="tab" aria-expanded="true">Home</a></li>'
+        + '<li class="active"><a href="#home" toggle="tab" aria-expanded="true">Home.png</a></li>'
         + '<li><a href="#profile" toggle="tab" aria-expanded="false">Profile</a></li>'
         + '</ul>'
     var $tabs = $(tabsHTML).appendTo('#qunit-fixture')

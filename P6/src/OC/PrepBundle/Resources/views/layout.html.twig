@@ -5,7 +5,9 @@
             <meta charset="UTF-8"/>
             <meta name= "viewport" content= "width=device-width, initial-scale=1">
             <title>
-                {% block title %}Welcome!{% endblock %}
+                {% block title %}
+                    SnowTricks
+                {% endblock %}
             </title>
             {% block javascripts %}
                 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -61,7 +63,7 @@
                 {% if is_granted('ROLE_USER') %}
                     <a class="nav-link" href="{{ path('fos_user_security_logout') }}" style="color: #fff;">Logout</a>
                 {% elseif is_granted('ROLE_ADMIN') %} }}
-                    <a class="nav-link" href="{{ path('fos_user_security_logout') }}" style="color: #fff;">Logout</a>
+                    <a class="btn btn-danger" href="{{ path('fos_user_security_logout') }}" style="color: #fff;">Logout</a>
                 {% else %}
                     <a class="nav-link" href="{{ path('fos_user_security_login') }}" style="color: #fff;">Login</a>
                 </li>

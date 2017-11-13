@@ -37,9 +37,11 @@
                             <img src="{{ pics.url }}" alt="Card image cap" style=" width: 250px;height: 280px;">
                         </a>
                         <div class="card-header bg-faded text-right" style=" width: 250px;">
-                            <h3 class="text-center">{{ pics.trick.group.groupName }}</h3>
-                            <p class="text-left">{{ pics.trick.description }}</p>
-                        <!-- Pencil icon by Icons8 -->
+                            <h2 class="text-center">{{ pics.trick.name }}</h2>
+                            <p class="text-center">{{ pics.trick.description }}</p>
+                            <br/>
+                            <h5 class="text-center">{{ pics.trick.group.groupName }}</h5>
+                            <!-- Pencil icon by Icons8 -->
                             {% if is_granted('ROLE_USER') %}
                                <a href="{{ path('oc_prep_edit', {'id':pics.trick.id }) }}">
                                    <i class="material-icons right-align">create</i>

@@ -95,6 +95,7 @@ class ComposerStaticInit9c703106418ed578153b023b4fb44d52
         ),
         'C' => 
         array (
+            'CoreSphere\\ConsoleBundle\\' => 25,
             'Composer\\CaBundle\\' => 18,
         ),
     );
@@ -271,6 +272,10 @@ class ComposerStaticInit9c703106418ed578153b023b4fb44d52
         'Doctrine\\Bundle\\DoctrineBundle\\' => 
         array (
             0 => __DIR__ . '/..' . '/doctrine/doctrine-bundle',
+        ),
+        'CoreSphere\\ConsoleBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/coresphere/console-bundle',
         ),
         'Composer\\CaBundle\\' => 
         array (
