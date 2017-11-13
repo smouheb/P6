@@ -1,0 +1,12 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_host: sensoluxbadasymf.mysql.db
+    database_port: 8889
+    database_name: P6
+    database_user: sensoluxbadasymf
+    database_password: Lana2014Noah2016
+    mailer_transport: smtp
+    mailer_host: smtp.gmail.com
+    mailer_user: smael.mouheb@gmail.com
+    mailer_password: Fadoua18011982
+    secret: 22ba501528b4839ec58231ba2ac10f842827a380
