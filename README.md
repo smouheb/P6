@@ -39,6 +39,7 @@ or
 As I am using doctrine as my ORM, so to create the database, please use the below commands:
 
 php bin/console doctrine:database:create
+
 php bin/console doctrine:schema:update --force
 
 And you are good to go
