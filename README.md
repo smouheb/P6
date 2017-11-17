@@ -42,7 +42,7 @@ php bin/console doctrine:database:create
 
 php bin/console doctrine:schema:update --force (or use --dump-sql instead of "--force" to double check the sql statement before loading anything... better safer than sorry :)) )
 
-the to load the data by usinge the following command:
+And finally to load the data by usinge the following command:
 php ./bin/console App:Dataload
 
 And you are good to go!
