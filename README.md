@@ -45,6 +45,6 @@ php bin/console doctrine:schema:update --force (or use --dump-sql instead of "--
 And finally to load the data by usinge the following command:
 php ./bin/console App:Dataload
 
-And you are good to go!
+Now you are good to go!
 
 
