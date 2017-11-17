@@ -1,0 +1,59 @@
+%YAML 1.1
+---
+# sensoluxbadasymf.video
+-
+  id: 5
+  trick_id: 5
+  video_url: "https://www.youtube.com/embed/n0F6hSpxaFc"
+  created_at: "2017-11-05 20:52:03"
+-
+  id: 7
+  trick_id: 7
+  video_url: "https://www.youtube.com/embed/9_zC7CdvYu4"
+  created_at: "2017-11-12 13:26:58"
+-
+  id: 8
+  trick_id: 8
+  video_url: "https://www.youtube.com/embed/hih9jIzOoRg"
+  created_at: "2017-11-13 21:38:08"
+-
+  id: 9
+  trick_id: 9
+  video_url: "https://www.youtube.com/embed/6z6KBAbM0M"
+  created_at: "2017-11-13 21:41:20"
+-
+  id: 10
+  trick_id: 10
+  video_url: "https://www.youtube.com/embed/XOK7MVq-ccc"
+  created_at: "2017-11-13 21:51:20"
+-
+  id: 11
+  trick_id: 11
+  video_url: "https://www.youtube.com/embed/ZfYmOLEnF28"
+  created_at: "2017-11-13 21:55:02"
+-
+  id: 12
+  trick_id: 12
+  video_url: "https://www.youtube.com/embed/NeY6sSsbbZw"
+  created_at: "2017-11-13 21:59:27"
+-
+  id: 13
+  trick_id: 14
+  video_url: "https://www.youtube.com/embed/qqNV0tI3Z4k"
+  created_at: "2017-11-13 23:48:42"
+-
+  id: 14
+  trick_id: 15
+  video_url: "https://www.youtube.com/embed/fu41XpGjCLg"
+  created_at: "2017-11-13 23:51:35"
+-
+  id: 15
+  trick_id: 16
+  video_url: "https://www.youtube.com/embed/gT7MoamL-iY"
+  created_at: "2017-11-13 23:54:26"
+-
+  id: 20
+  trick_id: 23
+  video_url: "https://www.youtube.com/embed/9_zC7CdvYu4"
+  created_at: "2017-11-14 12:14:00"
+...

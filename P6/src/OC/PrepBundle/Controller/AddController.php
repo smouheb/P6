@@ -6,8 +6,6 @@ use OC\PrepBundle\Entity\TricksGroup;
 use OC\PrepBundle\Form\TricksGroupType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\File\UploadedFile;
-
 use OC\PrepBundle\Entity\Trick;
 use OC\PrepBundle\Form\TrickType;
 

@@ -1,0 +1,48 @@
+%YAML 1.1
+---
+# sensoluxbadasymf.tricks_group
+-
+  id: 8
+  groupName: "FS-360"
+  created_at: "2017-11-04 10:52:11"
+-
+  id: 10
+  groupName: 360
+  created_at: "2017-11-05 20:47:13"
+-
+  id: 12
+  groupName: "FS-RUFFLE"
+  created_at: "2017-11-11 22:22:48"
+-
+  id: 14
+  groupName: "FLIPS"
+  created_at: "2017-11-12 13:18:07"
+-
+  id: 15
+  groupName: "TESTOC"
+  created_at: "2017-11-12 14:58:01"
+-
+  id: 16
+  groupName: "GRABS"
+  created_at: "2017-11-13 21:32:48"
+-
+  id: 17
+  groupName: "ROTATIONS"
+  created_at: "2017-11-13 21:33:08"
+-
+  id: 18
+  groupName: "SKEWED ROTATIIONS"
+  created_at: "2017-11-13 21:34:26"
+-
+  id: 19
+  groupName: "SLIDES"
+  created_at: "2017-11-13 21:34:45"
+-
+  id: 20
+  groupName: "ONE FOOT TRICK"
+  created_at: "2017-11-13 21:35:04"
+-
+  id: 22
+  groupName: "OLD SCHOOL"
+  created_at: "2017-11-14 00:02:58"
+...

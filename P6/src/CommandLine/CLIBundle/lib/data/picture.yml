@@ -1,0 +1,59 @@
+%YAML 1.1
+---
+# sensoluxbadasymf.picture
+-
+  id: 5
+  trick_id: 5
+  url: "https://i.ytimg.com/vi/7fG7-_ucpsY/maxresdefault.jpg"
+  created_at: "2017-11-05 20:52:03"
+-
+  id: 7
+  trick_id: 7
+  url: "https://coresites-cdn.factorymedia.com/onboard/wp-content/uploads/2015/11/sven-thorgren-season-edit.jpg"
+  created_at: "2017-11-12 13:26:58"
+-
+  id: 8
+  trick_id: 8
+  url: "https://www.tutorialspoint.com/snowboarding/images/grab_tricks.jpg"
+  created_at: "2017-11-13 21:38:08"
+-
+  id: 9
+  trick_id: 9
+  url: "https://twistedsifter.files.wordpress.com/2011/01/perfect-tail-grab.jpg?w=799&h=533"
+  created_at: "2017-11-13 21:41:20"
+-
+  id: 10
+  trick_id: 10
+  url: "http://www.snowsurf.com/media/Les%20Tutos/comment-faire-frontside-720-snowboard-tuto.jpg"
+  created_at: "2017-11-13 21:51:20"
+-
+  id: 11
+  trick_id: 11
+  url: "http://78.media.tumblr.com/50899756ffddb5daa2335413885f27b2/tumblr_o1crbhhiVB1tqgmuwo1_1280.jpg"
+  created_at: "2017-11-13 21:55:02"
+-
+  id: 12
+  trick_id: 12
+  url: "https://i.ytimg.com/vi/NWkXQy91jbw/maxresdefault.jpg"
+  created_at: "2017-11-13 21:59:27"
+-
+  id: 13
+  trick_id: 14
+  url: "https://coresites-cdn.factorymedia.com/whitelines_new/wp-content/uploads/2015/03/fs360-Web-Ed-Blomfield.jpg"
+  created_at: "2017-11-13 23:48:42"
+-
+  id: 14
+  trick_id: 15
+  url: "https://cdn-snowboarding.transworld.net/blogs.dir/442/files/2015/06/Japan_Harrison_Gordon_Side_Fenelon.jpg"
+  created_at: "2017-11-13 23:51:35"
+-
+  id: 15
+  trick_id: 16
+  url: "http://coresites-cdn.factorymedia.com/whitelines_new/wp-content/uploads/2015/12/how-to-cork-540-snowboard-800.jpg"
+  created_at: "2017-11-13 23:54:26"
+-
+  id: 20
+  trick_id: 23
+  url: "https://coresites-cdn.factorymedia.com/onboard/wp-content/uploads/2015/11/sven-thorgren-season-edit.jpg"
+  created_at: "2017-11-14 12:14:00"
+...

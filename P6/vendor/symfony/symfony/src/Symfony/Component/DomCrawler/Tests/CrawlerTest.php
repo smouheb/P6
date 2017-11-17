@@ -715,7 +715,7 @@ EOF
 <html lang="en">
 <body>
     <div id="action">
-        <a href="/index.php?r=site/login">Login.png</a>
+        <a href="/index.php?r=site/login">Login</a>
     </div>
     <form id="login-form" action="/index.php?r=site/login" method="post">
         <button type="submit" name="Click 'Here'">Submit</button>
@@ -736,7 +736,7 @@ HTML;
 <html lang="en">
 <body>
     <div id="action">
-        <a href="/index.php?r=site/login">Login.png</a>
+        <a href="/index.php?r=site/login">Login</a>
     </div>
     <form id="login-form" action="/index.php?r=site/login" method="post">
         <button type="submit" name='Click "Here"'>Submit</button>
@@ -808,7 +808,7 @@ HTML;
 <html lang="en">
 <body>
     <div id="action">
-        <a href="/index.php?r=site/login">Login.png</a>
+        <a href="/index.php?r=site/login">Login</a>
     </div>
     <form id="login-form" action="/index.php?r=site/login" method="post">
         <button type="submit">Submit</button>
@@ -820,15 +820,15 @@ HTML;
         $crawler = new Crawler($html);
         $filtered = $crawler->filterXPath("descendant-or-self::*[@id = 'login-form']");
 
-        $this->assertCount(0, $filtered->selectLink('Login.png'));
+        $this->assertCount(0, $filtered->selectLink('Login'));
         $this->assertCount(1, $filtered->selectButton('Submit'));
 
         $filtered = $crawler->filterXPath("descendant-or-self::*[@id = 'action']");
 
-        $this->assertCount(1, $filtered->selectLink('Login.png'));
+        $this->assertCount(1, $filtered->selectLink('Login'));
         $this->assertCount(0, $filtered->selectButton('Submit'));
 
-        $this->assertCount(1, $crawler->selectLink('Login.png')->selectLink('Login.png'));
+        $this->assertCount(1, $crawler->selectLink('Login')->selectLink('Login'));
         $this->assertCount(1, $crawler->selectButton('Submit')->selectButton('Submit'));
     }
 

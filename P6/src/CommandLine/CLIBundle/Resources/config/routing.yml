@@ -1,0 +1,3 @@
+command_line_cli_homepage:
+    path:     /
+    defaults: { _controller: CommandLineCLIBundle:Default:index }

@@ -32,7 +32,7 @@ class LoginController implements ContainerAwareInterface
             $error = $request->getSession()->get(Security::AUTHENTICATION_ERROR);
         }
 
-        return new Response($this->container->get('twig')->render('@FormLogin/Login.png/login.html.twig', array(
+        return new Response($this->container->get('twig')->render('@FormLogin/Login/login.html.twig', array(
             // last username entered by the user
             'last_username' => $request->getSession()->get(Security::LAST_USERNAME),
             'error' => $error,
@@ -41,7 +41,7 @@ class LoginController implements ContainerAwareInterface
 
     public function afterLoginAction(UserInterface $user)
     {
-        return new Response($this->container->get('twig')->render('@FormLogin/Login.png/after_login.html.twig', array('user' => $user)));
+        return new Response($this->container->get('twig')->render('@FormLogin/Login/after_login.html.twig', array('user' => $user)));
     }
 
     public function loginCheckAction()

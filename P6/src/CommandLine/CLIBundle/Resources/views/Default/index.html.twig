@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<body>
+    {% for url in content %}
+
+    <div>{{ url }}</div>
+
+    {% endfor %}
+    <br/>
+    {% for vid in video %}
+
+        <div>{{ vid }}</div>
+
+    {% endfor %}
+    <br/>
+    {% for grp in group %}
+
+        <div>{{ grp }}</div>
+
+    {% endfor %}
+</body>
+{% endblock %}
